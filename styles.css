@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  background-color: #040e22;
+  color: white;
+  font-family: 'Questrial', sans-serif;
+}
+
+/* Mobile Design*/
+.header {
+  height: 6vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to right, #9371ea, #c549bc, #de995e);
+  animation: bg-animation 2.5s infinite alternate;
+  background-size: 200%;
+  margin: 1rem 1.6rem 0.6rem;
+  padding: 0.3rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.main {
+  margin: 0.6rem 1.6rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: 'slider' 'top-rated' 'best' 'fb-feed';
+  gap: 0.6rem;
+}
+
+.main > * {
+  background-color: #1d273b;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  /* just for testing */
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer {
+  background: linear-gradient(to right, #9371ea, #c549bc, #de995e);
+  margin: 0.6rem 1.6rem;
+  padding: 4rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  animation: bg-animation 2.5s infinite alternate;
+  background-size: 200%;
+}
+
+.slider {
+  grid-area: slider;
+}
+
+.top-rated {
+  grid-area: top-rated;
+}
+
+.best {
+  grid-area: best;
+}
+
+.fb-feed {
+  grid-area: fb-feed;
+}
+
+@keyframes bg-animation {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
+}
+
+/* just for testing */
+
+/* Tablet Design */
+@media only screen and (min-width: 768px) {
+  .main {
+    height: 80vh;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas:
+      'slider best'
+      'slider best'
+      'top-rated fb-feed'
+      'top-rated fb-feed';
+  }
+
+  .main > * {
+    height: auto;
+  }
+}
+
+/* Laptop Design */
+@media only screen and (min-width: 1024px) {
+  .main {
+    height: 80vh;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas:
+      'slider slider slider best'
+      'slider slider slider best'
+      'top-rated top-rated top-rated fb-feed'
+      'top-rated top-rated top-rated fb-feed';
+  }
+}
