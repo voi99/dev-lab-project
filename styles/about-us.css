@@ -1,0 +1,96 @@
+.main-about-us-code-editor-btn {
+   background: var(--l-gradient);
+   padding: 0.2rem 1rem;
+   transition: all 0.2s ease;
+   margin: auto;
+}
+
+.main-about-us-code-editor-btn:hover {
+   color: var(--dark-blue);
+   transform: scale(1.1);
+}
+
+.main-about-us-code-editor {
+   background-color: var(--space-blue);
+   margin: 0.85rem;
+   height: calc(100vh - 5.2rem - 0.85rem);
+   border-radius: 0.5rem;
+   display: flex;
+   flex-direction: column;
+}
+
+.main-about-us-code-editor-title-bar {
+   background-color: var(--light-space-blue);
+   padding: 0.6rem 0.8rem;
+   display: flex;
+   align-items: center;
+   border-radius: 0.5rem 0.5rem 0rem 0rem;
+}
+
+.main-about-us-code-editor-title-bar-btn {
+   padding: 0rem 0.3rem;
+   cursor: not-allowed;
+}
+
+.main-about-us-code-editor-code-section {
+   padding: 1rem 0.8rem;
+}
+
+.main-about-us-profiles {
+   display: grid;
+   grid-template-columns: 1fr;
+   row-gap: 0.85rem;
+   margin: 0.85rem;
+}
+
+.main-about-us-profiles-profile {
+   border-radius: 0.5rem;
+   background-color: var(--space-blue);
+   padding: 1rem;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+}
+.main-about-us-profiles-profile a {
+   text-decoration: none;
+   color: inherit;
+   padding: 0rem 0.4rem;
+}
+
+.main-about-us-profiles-profile a:hover {
+   color: var(--dark-blue);
+   transition: all 0.25s ease;
+}
+
+div[class^='main-about-us-profiles-profile-img-'] {
+   width: 12rem;
+   height: 12rem;
+   border-radius: 50%;
+}
+
+.main-about-us-profiles *:nth-child(n + 4) {
+   width: 100%;
+}
+
+.main-about-us-profiles-profile ul {
+   padding: 0rem 1.1rem;
+}
+
+.main-about-us-profiles-profile-img-ivan {
+   background: url('../assets/images/ivan.JPG') center/cover no-repeat;
+}
+
+/* ADD YOUR PIC */
+
+.hide {
+   display: none;
+}
+
+@media only screen and (min-width: 768px) {
+   .main-about-us-profiles {
+      grid-template-columns: 1fr 1fr;
+      row-gap: 0rem;
+      column-gap: 0.85rem;
+   }
+}
