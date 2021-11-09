@@ -1,3 +1,4 @@
+/* Mobile Design*/
 .main-about-us-code-editor-btn {
    background: var(--l-gradient);
    padding: 0.2rem 1rem;
@@ -103,6 +104,7 @@ div[class^='main-about-us-profiles-profile-img-'] {
    display: none;
 }
 
+/* Laptop Design */
 @media only screen and (min-width: 768px) {
    .main-about-us-profiles {
       grid-template-columns: 1fr 1fr;
