@@ -4,8 +4,8 @@ bestDevelopers.forEach((developer)=>{;
 !WORLD.push(developer);
 });`.split('')
 const $ = (e) => document.querySelector(e)
-const KEYBOARD_TYPING = new Audio('../assets/typing.mp3')
-const KEYBOARD_ENTER = new Audio('../assets/enter.mp3')
+const KEYBOARD_TYPING = new Audio('../assets/audio/typing.mp3')
+const KEYBOARD_ENTER = new Audio('../assets/audio/enter.mp3')
 
 let interval
 let position = 0

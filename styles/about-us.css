@@ -78,10 +78,12 @@ div[class^='main-about-us-profiles-profile-img-'] {
 }
 
 .main-about-us-profiles-profile-img-ivan {
-   background: url('../assets/images/ivan.JPG') center/cover no-repeat;
+   background: url('../assets/images/ivan.webp') center/cover no-repeat;
 }
 
-/* ADD YOUR PIC */
+.main-about-us-profiles-profile-img-radule {
+   background: url('../assets/images/radule.webp') center/cover no-repeat;
+}
 
 .hide {
    display: none;
