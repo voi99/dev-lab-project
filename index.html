@@ -3,7 +3,7 @@
       <meta charset="UTF-8" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Rhapsody</title>
+      <title>rhapsody</title>
       <link
          rel="apple-touch-icon"
          sizes="180x180"
@@ -36,6 +36,7 @@
          href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
       />
       <script src="src/headerFooter.js" type="module" defer></script>
+      <script src="src/topRated.js" type="module" defer></script>
    </head>
    <body>
       <header class="header">
@@ -93,98 +94,13 @@
          <div class="slider">slider</div>
          <div class="main-top-rated">
             <h2 class="title">top rated</h2>
-            <div class="main-top-rated-products">
-               <div class="main-top-rated-products-product card">
-                  <div class="card-title">
-                     <p class="product-category">kategorija</p>
-                     <strong class="product-title">torba</strong>
-                  </div>
-                  <div class="card-img">
-                     <img
-                        src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
-                        alt=""
-                     />
-                  </div>
-                  <div class="card-footer">
-                     <div class="card-footer-product-price">
-                        <strong class="product-price">$109.95</strong>
-                     </div>
-                     <button class="btn add-to-cart-btn">add to cart</button>
-                  </div>
-               </div>
-               <div class="main-top-rated-products-product card">
-                  <div class="card-title">
-                     <p class="product-category">kategorija</p>
-                     <strong class="product-title">torba</strong>
-                  </div>
-                  <div class="card-img">
-                     <img
-                        src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
-                        alt=""
-                     />
-                  </div>
-                  <div class="card-footer">
-                     <div class="card-footer-product-price">
-                        <strong class="product-price">$109.95</strong>
-                     </div>
-                     <button class="btn add-to-cart-btn">add to cart</button>
-                  </div>
-               </div>
-               <div class="main-top-rated-products-product card">
-                  <div class="card-title">
-                     <p class="product-category">kategorija</p>
-                     <strong class="product-title">torba</strong>
-                  </div>
-                  <div class="card-img">
-                     <img
-                        src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
-                        alt=""
-                     />
-                  </div>
-                  <div class="card-footer">
-                     <div class="card-footer-product-price">
-                        <strong class="product-price">$109.95</strong>
-                     </div>
-                     <button class="btn add-to-cart-btn">add to cart</button>
-                  </div>
-               </div>
-               <div class="main-top-rated-products-product card">
-                  <div class="card-title">
-                     <p class="product-category">kategorija</p>
-                     <strong class="product-title">torba</strong>
-                  </div>
-                  <div class="card-img">
-                     <img
-                        src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
-                        alt=""
-                     />
-                  </div>
-                  <div class="card-footer">
-                     <div class="card-footer-product-price">
-                        <strong class="product-price">$109.95</strong>
-                     </div>
-                     <button class="btn add-to-cart-btn">add to cart</button>
-                  </div>
-               </div>
-               <div class="main-top-rated-products-product card">
-                  <div class="card-title">
-                     <p class="product-category">kategorija</p>
-                     <strong class="product-title">torba</strong>
-                  </div>
-                  <div class="card-img">
-                     <img
-                        src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
-                        alt=""
-                     />
-                  </div>
-                  <div class="card-footer">
-                     <div class="card-footer-product-price">
-                        <strong class="product-price">$109.95</strong>
-                     </div>
-                     <button class="btn add-to-cart-btn">add to cart</button>
-                  </div>
+            <div class="loading-circle loading-circle-desktop">
+               <div class="circle">
+                  <div class="circle-inside"></div>
                </div>
             </div>
+            <div class="main-top-rated-products"></div>
+            <button class="btn load-more-btn hide">load more</button>
          </div>
          <div class="best">best</div>
          <div class="fb-feed">fb-feed</div>

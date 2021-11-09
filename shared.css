@@ -223,6 +223,55 @@ body {
    cursor: pointer;
 }
 
+.loading-circle {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 20rem;
+   height: 20rem;
+   margin: auto;
+}
+
+.circle {
+   width: 100%;
+   height: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background: var(--l-gradient);
+   border-radius: 50%;
+   animation: spin 0.9s linear infinite;
+}
+
+.circle-inside {
+   width: 95%;
+   height: 100%;
+   background: var(--dark-blue);
+   border-radius: 50%;
+}
+
+@keyframes spin {
+   from {
+      transform: rotate(0);
+   }
+   to {
+      transform: rotate(359deg);
+   }
+}
+
+@keyframes animate {
+   0%,
+   100% {
+      stroke-dashoffset: 440;
+   }
+   50% {
+      stroke-dashoffset: 0;
+   }
+   50.1% {
+      stroke-dashoffset: 880;
+   }
+}
+
 @keyframes bg-animation {
    0% {
       background-position: left;
