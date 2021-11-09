@@ -25,6 +25,7 @@
    display: flex;
    align-items: center;
    border-radius: 0.5rem 0.5rem 0rem 0rem;
+   justify-content: flex-end;
 }
 
 .main-about-us-code-editor-title-bar-btn {
@@ -43,10 +44,14 @@
    margin: 0.85rem;
 }
 
+.main-about-us-profiles h3 {
+   margin: 0.5em 0em;
+}
+
 .main-about-us-profiles-profile {
    border-radius: 0.5rem;
    background-color: var(--space-blue);
-   padding: 1rem;
+   padding: 1.2rem;
    display: flex;
    justify-content: center;
    align-items: center;
@@ -74,7 +79,16 @@ div[class^='main-about-us-profiles-profile-img-'] {
 }
 
 .main-about-us-profiles-profile ul {
-   padding: 0rem 1.1rem;
+   list-style: none;
+   padding: 0rem;
+}
+
+.main-about-us-profiles-profile ul li {
+   padding: 0.2rem 0rem;
+}
+
+.main-about-us-profiles-profile ul li i:last-of-type {
+   margin-right: 0.5rem;
 }
 
 .main-about-us-profiles-profile-img-ivan {

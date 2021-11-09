@@ -18,19 +18,23 @@ let position = 0
 function startTyping(e) {
    e.target.classList.add('hide')
    $('.main-about-us-code-editor-title-bar').classList.remove('hide')
-   $('.main-about-us-code-editor-code-section').classList.remove('hide')
-   const codeEditor = $('.main-about-us-code-editor')
-   const codeSection = $('.code')
-   const profilesSection = $('.main-about-us-profiles')
+   animateCSS($('.main-about-us-code-editor-title-bar'), 'slideInLeft').then(
+      () => {
+         $('.main-about-us-code-editor-code-section').classList.remove('hide')
+         const codeEditor = $('.main-about-us-code-editor')
+         const codeSection = $('.code')
+         const profilesSection = $('.main-about-us-profiles')
 
-   interval = setInterval(typeLetterAndPlayAudio, 101, {
-      profilesSection: profilesSection,
-      codeEditor: codeEditor,
-      codeText: CODE_TEXT,
-      codeSection: codeSection,
-      typing: KEYBOARD_TYPING,
-      enter: KEYBOARD_ENTER,
-   })
+         interval = setInterval(typeLetterAndPlayAudio, 101, {
+            profilesSection: profilesSection,
+            codeEditor: codeEditor,
+            codeText: CODE_TEXT,
+            codeSection: codeSection,
+            typing: KEYBOARD_TYPING,
+            enter: KEYBOARD_ENTER,
+         })
+      }
+   )
 }
 
 function typeLetterAndPlayAudio(props) {
