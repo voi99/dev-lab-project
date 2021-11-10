@@ -1,3 +1,5 @@
+import { addProductToCart } from './modules/AddToCart.js'
+
 const $ = (e) => document.querySelector(e)
 const $$ = (e) => document.querySelectorAll(e)
 
@@ -28,12 +30,27 @@ function loadAndAppendProducts() {
                 <div class="card-img">
                     <img src="${product.image}">
                 </div>
-                <div class="card-footer">
-                <strong class="product-price">$ ${product.price}</strong>
-                <button class="btn add-to-cart-btn">add to cart</button>
-                </div>`
+               `
 
-            productCard.innerHTML += productHTML
+            productCard.innerHTML = productHTML
+            const cardFooter = document.createElement('div')
+            cardFooter.classList.add('card-footer')
+
+            const productPrice = document.createElement('strong')
+            productPrice.classList.add('product-price')
+            productPrice.innerHTML = `$ ${product.price}`
+
+            const addToCartBtn = document.createElement('button')
+            addToCartBtn.classList.add('btn', 'add-to-cart-btn')
+            addToCartBtn.innerHTML = 'add to cart'
+            addToCartBtn.dataset.id = product.id
+            addToCartBtn.addEventListener('click', addProductToCart, {
+               once: true,
+            })
+
+            cardFooter.appendChild(productPrice)
+            cardFooter.appendChild(addToCartBtn)
+            productCard.appendChild(cardFooter)
 
             if (index >= shown) {
                productCard.classList.add('hide')

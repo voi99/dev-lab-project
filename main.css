@@ -41,7 +41,7 @@
 
 .card {
    background: var(--space-blue);
-   padding: 1.2rem;
+   padding: 1.2rem 1.3rem;
    border-radius: 0.5rem;
    transition: all 0.3s ease;
    display: flex;
