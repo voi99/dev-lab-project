@@ -1,4 +1,5 @@
 import { animateCSS } from './modules/AnimateCSS.js'
+import { loadCart } from './modules/LoadCart.js'
 
 const $ = (e) => document.querySelector(e)
 const $$ = (e) => document.querySelectorAll(e)
@@ -8,9 +9,24 @@ const $$ = (e) => document.querySelectorAll(e)
    const navIcon = $('#nav-icon')
    const nav = $('.header-nav')
    const socialMedia = $$('.footer-follow-us-social-media i')
+   const cartIcon = $('.cart-wrap')
+   const cartDropdown = $('.cart-dropdown')
 
    navIcon.addEventListener('click', (e) => {
       changeIconAndAnimate(e, nav)
+   })
+
+   cartIcon.addEventListener('click', (e) => {
+      animateCSS(e.currentTarget, 'wobble')
+      if (cartDropdown.classList.contains('hide')) {
+         loadCart()
+         cartDropdown.classList.remove('hide')
+         animateCSS(cartDropdown, 'backInDown')
+      } else {
+         animateCSS(cartDropdown, 'bounceOut').then(() =>
+            cartDropdown.classList.add('hide')
+         )
+      }
    })
 
    socialMedia.forEach((child) => {

@@ -1,3 +1,5 @@
+import { loadCart } from './LoadCart.js'
+
 export const addProductToCart = (e) => {
    const productID = e.target.dataset['id']
    fetch(`https://fakestoreapi.com/products/${productID}`, {
@@ -8,6 +10,7 @@ export const addProductToCart = (e) => {
          if (!JSON.parse(localStorage.getItem('cart'))) {
             data.quantity = 1
             localStorage.setItem('cart', JSON.stringify([data]))
+            loadCart()
          } else {
             const oldCart = JSON.parse(localStorage.getItem('cart'))
             let exists = false
@@ -26,6 +29,7 @@ export const addProductToCart = (e) => {
             }
 
             localStorage.setItem('cart', JSON.stringify(newCart))
+            loadCart()
          }
       })
 }
