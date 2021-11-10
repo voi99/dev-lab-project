@@ -240,7 +240,7 @@ body {
    align-items: center;
    background: var(--l-gradient);
    border-radius: 50%;
-   animation: spin 0.9s linear infinite;
+   /* animation: spin 0.9s linear infinite; */
 }
 
 .circle-inside {
