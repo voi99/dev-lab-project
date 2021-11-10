@@ -1,0 +1,28 @@
+.main-cart {
+   background: var(--space-blue);
+   min-height: 30rem;
+   border-radius: 0.5rem;
+   margin: 0.85rem;
+}
+
+.main-cart,
+.empty-cart {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+}
+
+.start-shopping-btn {
+   margin: 1rem;
+   padding: 0.5rem 2rem;
+   background-color: var(--white);
+   color: var(--dark-blue);
+   transition: all 0.3s ease;
+}
+
+.start-shopping-btn:hover {
+   background-color: var(--dark-blue);
+   color: var(--white);
+   transform: scale(1.1);
+}
