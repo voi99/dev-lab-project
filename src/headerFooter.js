@@ -1,5 +1,5 @@
 import { animateCSS } from './modules/AnimateCSS.js'
-import { loadCart } from './modules/LoadCart.js'
+import { loadCart } from './modules/LoadMiniCart.js'
 
 const $ = (e) => document.querySelector(e)
 const $$ = (e) => document.querySelectorAll(e)
