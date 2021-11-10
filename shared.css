@@ -8,6 +8,7 @@
    --dark-blue: #040e22;
    --space-blue: #1d273b;
    --light-space-blue: #2a3750;
+   --light-space-blue-transparent: #2a37508f;
    --l-gradient: linear-gradient(
       to right,
       var(--light-purple),
@@ -133,26 +134,6 @@ body {
    border-radius: 50%;
 }
 
-/* remove later */
-.main {
-   margin: 0.85rem;
-   display: grid;
-   grid-template-columns: 1fr;
-   grid-template-areas: 'slider' 'top-rated' 'best' 'fb-feed';
-   gap: 0.6rem;
-}
-
-.main > * {
-   background-color: var(--space-blue);
-   border-radius: 0.5rem;
-   padding: 1rem;
-   /* just for testing */
-   height: 30vh;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-}
-
 .footer {
    margin: 0.85rem;
    padding: 1rem 2rem;
@@ -233,22 +214,6 @@ body {
    margin: 0.8rem;
 }
 
-.slider {
-   grid-area: slider;
-}
-
-.top-rated {
-   grid-area: top-rated;
-}
-
-.best {
-   grid-area: best;
-}
-
-.fb-feed {
-   grid-area: fb-feed;
-}
-
 .btn {
    color: inherit;
    font-family: inherit;
@@ -256,6 +221,55 @@ body {
    border: none;
    border-radius: 0.3rem;
    cursor: pointer;
+}
+
+.loading-circle {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 20rem;
+   height: 20rem;
+   margin: auto;
+}
+
+.circle {
+   width: 100%;
+   height: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background: var(--l-gradient);
+   border-radius: 50%;
+   animation: spin 0.9s linear infinite;
+}
+
+.circle-inside {
+   width: 95%;
+   height: 100%;
+   background: var(--dark-blue);
+   border-radius: 50%;
+}
+
+@keyframes spin {
+   from {
+      transform: rotate(0);
+   }
+   to {
+      transform: rotate(359deg);
+   }
+}
+
+@keyframes animate {
+   0%,
+   100% {
+      stroke-dashoffset: 440;
+   }
+   50% {
+      stroke-dashoffset: 0;
+   }
+   50.1% {
+      stroke-dashoffset: 880;
+   }
 }
 
 @keyframes bg-animation {
@@ -267,26 +281,10 @@ body {
    }
 }
 
-/* just for testing */
-
 /* Tablet Design */
 @media only screen and (min-width: 768px) {
    body {
       font-size: 18px;
-   }
-   .main {
-      height: 80vh;
-      grid-template-columns: repeat(4, 1fr);
-      grid-template-rows: repeat(4, 1fr);
-      grid-template-areas:
-         'slider slider slider best'
-         'slider slider slider best'
-         'top-rated top-rated top-rated fb-feed'
-         'top-rated top-rated top-rated fb-feed';
-   }
-
-   .main > * {
-      height: auto;
    }
 
    .header-nav-cart-wrapper {
@@ -394,11 +392,9 @@ body {
    body {
       font-size: 20px;
    }
+
    .dropdown {
       top: 3.85rem;
-   }
-   .main {
-      height: 80vh;
    }
 
    #cart:hover,

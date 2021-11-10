@@ -3,8 +3,30 @@
       <meta charset="UTF-8" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Rhapsody</title>
-      <link rel="stylesheet" href="styles.css" />
+      <title>rhapsody</title>
+      <link
+         rel="apple-touch-icon"
+         sizes="180x180"
+         href="assets/icons/apple-touch-icon.png"
+      />
+      <link
+         rel="icon"
+         type="image/png"
+         sizes="32x32"
+         href="assets/icons/favicon-32x32.png"
+      />
+      <link
+         rel="icon"
+         type="image/png"
+         sizes="16x16"
+         href="assets/icons/favicon-16x16.png"
+      />
+      <link rel="manifest" href="assets/icons/site.webmanifest" />
+      <meta name="msapplication-config" content="/browserconfig.xml" />
+      <meta name="msapplication-TileColor" content="#ffffff" />
+      <meta name="theme-color" content="#ffffff" />
+      <link rel="stylesheet" href="shared.css" />
+      <link rel="stylesheet" href="main.css" />
       <link
          rel="stylesheet"
          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
@@ -14,6 +36,7 @@
          href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
       />
       <script src="src/headerFooter.js" type="module" defer></script>
+      <script src="src/topRated.js" type="module" defer></script>
    </head>
    <body>
       <header class="header">
@@ -69,7 +92,16 @@
       </header>
       <main class="main">
          <div class="slider">slider</div>
-         <div class="top-rated">top-rated</div>
+         <div class="main-top-rated">
+            <h2 class="title">top rated</h2>
+            <div class="loading-circle loading-circle-desktop">
+               <div class="circle">
+                  <div class="circle-inside"></div>
+               </div>
+            </div>
+            <div class="main-top-rated-products"></div>
+            <button class="btn load-more-btn hide">load more</button>
+         </div>
          <div class="best">best</div>
          <div class="fb-feed">fb-feed</div>
       </main>
