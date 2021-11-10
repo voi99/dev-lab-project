@@ -31,21 +31,6 @@
                   </a>
                   <div class="dropdown">
                      <ul class="dropdown-list">
-                        <a href="">
-                           <li class="dropdown-list-element">
-                              kategorija 1
-                           </li>
-                        </a>
-                        <a href="">
-                           <li class="dropdown-list-element">
-                              kategorija 2
-                           </li>
-                        </a>
-                        <a href="">
-                           <li class="dropdown-list-element">
-                              kategorija 3
-                           </li>
-                        </a>
                      </ul>
                   </div>
                </div>
@@ -69,34 +54,13 @@
       <div class="filter">
          <div class="filter-search">
             <input type="text" name="" id="" placeholder="Type Here" class="filter-search-input">
-            <button class="filter-search-btn">Search</button>
+            <button class="filter-search-btn" onclick="filter()">Search</button>
          </div>
          <div class="filter-specs">
             <div class="radio-filter-div">
-
-               <span class="radio-container">
-                  <input type="radio" id="contactChoice1" name="contact" value="email">
-                  <label for="contactChoice1">Electronics</label>
-               </span>
-
-               <span class="radio-container">
-                  <input type="radio" id="contactChoice2" name="contact" value="phone">
-                  <label for="contactChoice2">Jewelery</label>
-               </span>
-
-               <span class="radio-container">
-                  <input type="radio" id="contactChoice3" name="contact" value="mail">
-                  <label for="contactChoice3">Men's clothing</label>
-               </span>
-
-               <span class="radio-container">
-                  <input type="radio" id="contactChoice3" name="contact" value="mail">
-                  <label for="contactChoice3">Women's clothing</label>
-               </span>
-
             </div>
             <div class="slide-filter">
-               <input type="range" min="1" max="100" value="1" class="slide" id="myRange">
+               <input type="range" min="1" max="100" value="100" class="slide" id="myRange">
                <span>Rates</span>
             </div>
             <span class="filter-specs-text">Filters</span>
@@ -163,6 +127,7 @@
          </div>
       </div>
    </footer>
+   <script src="../src/list.js"></script>
 </body>
 
 </html>

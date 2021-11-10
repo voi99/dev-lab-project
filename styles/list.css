@@ -58,7 +58,7 @@ body {
     border-radius: 0.5rem;
 }
 
-.header, .header-nav, .footer, .filter-search-btn {
+.header, .header-nav, .footer, .filter-search-btn, .radio-filter:checked + label {
     background: var(--l-gradient);
     animation: bg-animation 2.5s infinite alternate;
     background-size: 200%;
@@ -163,11 +163,10 @@ body {
     display: grid;
     grid-template-areas: "filters slide"
                          "radios radios";
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: 1fr 1fr;
-
-}
-
+                         grid-template-columns: 1fr 2fr;
+                         grid-template-rows: 1fr 1fr;                        
+                        }
+                        
 .radio-filter-div {
     grid-area: radios;
     display: grid;
@@ -175,11 +174,17 @@ body {
     grid-gap: 0.85rem;
 }
 
-.radio-container {
-    border-radius: 0.5rem;
+.radio-filter-div > label {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-transform:capitalize;
+}
+
+.radio-filter-div > input {
+    display: none;
 }
 
 .slide-filter {
