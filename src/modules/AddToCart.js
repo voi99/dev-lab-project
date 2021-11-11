@@ -1,4 +1,4 @@
-import { loadCart } from './LoadCart.js'
+import { loadCart } from './LoadMiniCart.js'
 
 export const addProductToCart = (e) => {
    const productID = e.target.dataset['id']

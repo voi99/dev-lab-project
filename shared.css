@@ -63,11 +63,12 @@ body {
 
 .header-nav,
 .cart-dropdown {
-   min-height: calc(100vh - 5.2rem - 0.85rem);
+   min-height: 85vh;
    position: absolute;
    width: 60vw;
    top: calc(3.5rem + 1.7rem);
    border-radius: 0.5rem;
+   z-index: 10;
 }
 
 .header-nav {
@@ -149,14 +150,12 @@ body {
 }
 
 .cart-dropdown {
-   min-height: 18rem;
    right: 0.85rem;
    display: flex;
    justify-content: start;
    align-items: center;
    padding: 0.3rem;
    flex-direction: column;
-   z-index: 10;
 }
 
 .cart-dropdown > strong {
@@ -371,6 +370,10 @@ body {
       justify-content: flex-end;
       align-items: center;
       width: 100%;
+   }
+
+   .header-nav {
+      min-height: auto;
    }
 
    #nav-icon {
