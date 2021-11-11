@@ -1,3 +1,4 @@
+import { animateCSS } from './modules/AnimateCSS.js'
 ;(function () {
    const $ = (e) => document.querySelector(e)
    const mainCart = $('.main-cart')
@@ -92,6 +93,7 @@
       const payBtn = document.createElement('button')
       payBtn.classList.add('btn', 'pay-btn')
       payBtn.innerHTML = 'pay'
+      payBtn.addEventListener('click', handlePay)
       payDiv.appendChild(payBtn)
 
       mainCart.appendChild(payDiv)
@@ -104,3 +106,30 @@
          </div>`
    }
 })()
+
+function handlePay(e) {
+   try {
+      e.target.parentNode.classList.add('hide')
+      const products = document.querySelectorAll('.main-cart-product')
+      Array.from(products)
+         .reverse()
+         .forEach((product, index) => {
+            setTimeout(
+               () =>
+                  animateCSS(product, 'fadeOutRight').then(() => {
+                     product.classList.add('hide')
+                     if (index === products.length - 1) {
+                        const purchase = document.querySelector(
+                           '.main-cart-end-of-purchase'
+                        )
+
+                        purchase.classList.remove('hide')
+                        animateCSS(purchase, 'fadeIn')
+                     }
+                  }),
+               1000 * index
+            )
+         })
+      localStorage.removeItem('cart')
+   } catch {}
+}
