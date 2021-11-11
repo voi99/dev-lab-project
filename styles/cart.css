@@ -75,6 +75,14 @@
    align-items: center;
 }
 
+.main-cart-product-quantity i {
+   cursor: pointer;
+}
+
+.main-cart-product-quantity i:hover {
+   color: var(--light-brown);
+}
+
 .main-cart-product-price {
    grid-area: price;
 }
@@ -100,9 +108,14 @@
 }
 
 .pay-btn {
+   transition: all 0.3s ease;
    padding: 0.3rem;
    margin: 0.3rem;
    background: var(--l-gradient);
+}
+
+.remove-from-cart-btn {
+   transition: all 0.3s ease;
 }
 
 .main-cart-end-of-purchase-icon {
@@ -136,7 +149,7 @@
          'image text rating remove'
          'image text quantity remove'
          'image text price remove';
-      height: 15rem;
+      height: 16rem;
       gap: 0rem 0.2rem;
    }
 
@@ -154,5 +167,11 @@
    .main-cart-product-text {
       padding: 0.5rem;
       flex-direction: column;
+   }
+
+   .pay-btn:hover,
+   .remove-from-cart-btn:hover {
+      color: var(--dark-blue);
+      transform: scale(1.1);
    }
 }

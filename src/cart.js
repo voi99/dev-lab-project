@@ -1,6 +1,9 @@
 import { animateCSS } from './modules/AnimateCSS.js'
+
+const $ = (e) => document.querySelector(e)
+const $$ = (e) => document.querySelectorAll(e)
+
 ;(function () {
-   const $ = (e) => document.querySelector(e)
    const mainCart = $('.main-cart')
 
    try {
@@ -27,7 +30,12 @@ import { animateCSS } from './modules/AnimateCSS.js'
 
          const productDesc = document.createElement('div')
          productDesc.classList.add('main-cart-product-description')
-         productDesc.innerHTML = product.description
+         product.description.length > 120
+            ? (productDesc.innerHTML = `${product.description.substring(
+                 0,
+                 120
+              )}...`)
+            : (productDesc.innerHTML = product.description)
          productDivText.appendChild(productDesc)
          productDiv.append(productDivText)
 
@@ -54,10 +62,13 @@ import { animateCSS } from './modules/AnimateCSS.js'
 
          const minusIcon = document.createElement('i')
          minusIcon.classList.add('fas', 'fa-minus-square')
+         minusIcon.dataset.id = product.id
+
          productQuantityMinus.appendChild(minusIcon)
          productDivQuantity.appendChild(productQuantityMinus)
 
          const productQuantity = document.createElement('div')
+         productQuantity.classList.add('product-quantity')
          productQuantity.innerHTML = product.quantity
          productDivQuantity.appendChild(productQuantity)
 
@@ -66,18 +77,21 @@ import { animateCSS } from './modules/AnimateCSS.js'
 
          const plusIcon = document.createElement('i')
          plusIcon.classList.add('fas', 'fa-plus-square')
+         plusIcon.dataset.id = product.id
          productQuantityPlus.appendChild(plusIcon)
          productDivQuantity.appendChild(productQuantityPlus)
          productDiv.appendChild(productDivQuantity)
 
          productDiv.innerHTML += ` <div class="main-cart-product-price">$ ${product.price}</div>`
-         total += product.price
+         total += product.price * product.quantity
          const productDivRemove = document.createElement('div')
          productDivRemove.classList.add('main-cart-product-remove')
 
          const productRemoveBtn = document.createElement('buttton')
          productRemoveBtn.classList.add('btn', 'remove-from-cart-btn')
          productRemoveBtn.innerHTML = 'remove'
+         productRemoveBtn.dataset.id = product.id
+         productRemoveBtn.addEventListener('click', removeProduct)
          productDivRemove.appendChild(productRemoveBtn)
          productDiv.append(productDivRemove)
 
@@ -97,7 +111,8 @@ import { animateCSS } from './modules/AnimateCSS.js'
       payDiv.appendChild(payBtn)
 
       mainCart.appendChild(payDiv)
-   } catch {
+      addEvenetListenerOnQuantityIcons()
+   } catch (error) {
       mainCart.innerHTML = `<div class="empty-cart">
             <div>your cart is empty <i class="fas fa-sad-tear"></i></div>
             <a href="../index.html">
@@ -131,5 +146,98 @@ function handlePay(e) {
             )
          })
       localStorage.removeItem('cart')
-   } catch {}
+   } catch (error) {}
+}
+
+function removeProduct(e) {
+   try {
+      let productDiv
+      if (e.currentTarget.classList.contains('remove-from-cart-btn')) {
+         productDiv = e.currentTarget.parentNode.parentNode
+      } else {
+         productDiv = e.currentTarget.parentNode.parentNode.parentNode
+      }
+
+      const productId = e.currentTarget.dataset['id']
+
+      const cart = JSON.parse(localStorage.getItem('cart'))
+      const filterCart = cart.filter((product) => product.id != productId)
+
+      if (filterCart.length <= 0) {
+         localStorage.removeItem('cart')
+      } else {
+         localStorage.setItem('cart', JSON.stringify(filterCart))
+      }
+
+      animateCSS(productDiv, 'fadeOut').then(() => {
+         productDiv.remove()
+         updateUI(productId, cart)
+      })
+   } catch (error) {}
+}
+
+function updateUI(productId, cart, cb) {
+   const mainCart = $('.main-cart')
+   const products = $$('.main-cart-product')
+   if (products.length <= 0) {
+      mainCart.innerHTML = `<div class="empty-cart">
+            <div>your cart is empty <i class="fas fa-sad-tear"></i></div>
+            <a href="../index.html">
+               <button class="btn start-shopping-btn">start shopping</button>
+            </a>
+         </div>`
+   } else {
+      const total = $('.main-cart-total-to-pay span')
+      const totalPrice = total.innerHTML.substring(1)
+
+      for (let i = 0; i < cart.length; i++) {
+         if (cart[i].id == productId) {
+            if (cb) {
+               total.innerHTML = `$${cb(
+                  parseFloat(totalPrice),
+                  parseFloat(cart[i].price)
+               ).toFixed(2)}`
+               break
+            } else {
+               total.innerHTML = `$${(
+                  parseFloat(totalPrice) - parseFloat(cart[i].price)
+               ).toFixed(2)}`
+               break
+            }
+         }
+      }
+   }
+}
+
+function handleQuantity(e) {
+   const cart = JSON.parse(localStorage.getItem('cart'))
+   const productId = e.currentTarget.dataset['id']
+
+   for (let i = 0; i < cart.length; i++) {
+      if (cart[i].id == productId) {
+         if (e.currentTarget.classList.contains('fa-minus-square')) {
+            cart[i].quantity -= 1
+            if (cart[i].quantity <= 0) {
+               removeProduct(e)
+               return
+            }
+            e.currentTarget.parentNode.parentNode.children[1].innerHTML =
+               cart[i].quantity
+            updateUI(productId, cart, (a, b) => a - b)
+         } else {
+            cart[i].quantity += 1
+            e.currentTarget.parentNode.parentNode.children[1].innerHTML =
+               cart[i].quantity
+            updateUI(productId, cart, (a, b) => a + b)
+         }
+      }
+   }
+   localStorage.setItem('cart', JSON.stringify(cart))
+}
+
+//cant add eventlistener on iife on icon??
+function addEvenetListenerOnQuantityIcons() {
+   $$('.main-cart-product-quantity .fas').forEach((el) => {
+      el.addEventListener('click', handleQuantity)
+   })
 }
