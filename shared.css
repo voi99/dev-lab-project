@@ -9,6 +9,7 @@
    --space-blue: #1d273b;
    --light-space-blue: #2a3750;
    --light-space-blue-transparent: #2a37508f;
+   --yellowgreen: #9acd32;
    --l-gradient: linear-gradient(
       to right,
       var(--light-purple),
@@ -63,7 +64,7 @@ body {
 
 .header-nav,
 .cart-dropdown {
-   min-height: 85vh;
+   min-height: 75vh;
    position: absolute;
    width: 60vw;
    top: calc(3.5rem + 1.7rem);

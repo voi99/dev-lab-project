@@ -124,6 +124,24 @@
    margin: 0.5rem;
 }
 
+.added-to-cart-wrap {
+   width: 50%;
+   position: fixed;
+   bottom: 10;
+   left: 25%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.added-to-cart {
+   display: inline-block;
+   border-radius: 0.5rem;
+   background-color: var(--yellowgreen);
+   margin: 0rem auto;
+   padding: 0.5rem;
+   text-align: center;
+}
+
 .best {
    grid-area: best;
 }

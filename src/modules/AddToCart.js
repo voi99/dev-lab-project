@@ -1,7 +1,9 @@
 import { loadCart } from './LoadMiniCart.js'
+import { addToCartNotificaiton } from './AddToCartNotification.js'
 
 export const addProductToCart = (e) => {
    const productID = e.target.dataset['id']
+   const btn = e.currentTarget
    fetch(`https://fakestoreapi.com/products/${productID}`, {
       method: 'get',
    })
@@ -31,5 +33,6 @@ export const addProductToCart = (e) => {
             localStorage.setItem('cart', JSON.stringify(newCart))
             loadCart()
          }
+         addToCartNotificaiton(btn)
       })
 }
