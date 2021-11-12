@@ -11,6 +11,7 @@ const $$ = (e) => document.querySelectorAll(e)
    const socialMedia = $$('.footer-follow-us-social-media i')
    const cartIcon = $('.cart-wrap')
    const cartDropdown = $('.cart-dropdown')
+   loadCart()
 
    navIcon.addEventListener('click', (e) => {
       changeIconAndAnimate(e, nav)
