@@ -1,3 +1,5 @@
+import { animateCSS } from './AnimateCSS.js'
+
 export const loadCart = () => {
    const $ = (e) => document.querySelector(e)
    const productsSection = $('.cart-dropdown-products')
@@ -5,6 +7,13 @@ export const loadCart = () => {
 
    try {
       const products = JSON.parse(localStorage.getItem('cart'))
+      const noOfProducts = $('.cart-items-no')
+
+      if (products.length > 0) {
+         noOfProducts.classList.remove('hide')
+         noOfProducts.innerHTML = products.length
+         animateCSS(noOfProducts, 'pulse')
+      }
 
       products.forEach((product) => {
          const cartProduct = document.createElement('div')

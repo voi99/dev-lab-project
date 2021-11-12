@@ -1,4 +1,5 @@
 import { animateCSS } from './modules/AnimateCSS.js'
+import { loadCart } from './modules/LoadMiniCart.js'
 
 const $ = (e) => document.querySelector(e)
 const $$ = (e) => document.querySelectorAll(e)
@@ -146,6 +147,7 @@ function handlePay(e) {
             )
          })
       localStorage.removeItem('cart')
+      loadCart()
    } catch (error) {}
 }
 
@@ -207,6 +209,7 @@ function updateUI(productId, cart, cb) {
          }
       }
    }
+   loadCart()
 }
 
 function handleQuantity(e) {
