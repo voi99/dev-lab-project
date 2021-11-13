@@ -137,6 +137,25 @@
    text-align: center;
 }
 
+.remove-from-cart-wrap {
+   width: 50%;
+   position: fixed;
+   bottom: 10;
+   left: 25%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.remove-from-cart {
+   display: inline-block;
+   border-radius: 0.5rem;
+   background-color: var(--pink);
+   margin: 0rem auto;
+   padding: 0.5rem;
+   text-align: center;
+}
+
 .hide {
    display: none;
 }
