@@ -13,5 +13,7 @@ export const addToCartNotificaiton = (btn) => {
             1100
          )
       })
+      const cartIcon = document.querySelector('.cart-wrap')
+      animateCSS(cartIcon, 'wobble')
    })
 }
