@@ -22,8 +22,148 @@
    margin: 0rem 0.2rem 0.5rem;
 }
 
+/* ----------------------------------------------------------------------------- */
+/* SLIDER */
+/* ----------------------------------------------------------------------------- */
+
+@keyframes showLeft{
+   from{
+      left:-300px;
+      opacity:0;
+      transform:scale(0.7);
+   } 
+   to{
+      transform: scale(1);
+      left:0;
+      opacity:1
+   }
+}
+
+@keyframes hideLeft{
+   from{
+      left:0px;
+      opacity:1;
+      transform: scale(1);
+   } 
+   to{
+      transform: scale(0.7);
+      left:300px;
+      opacity:0
+   }
+}
+
+@keyframes showRight{
+   from{
+      right:-300px;
+      opacity:0;
+      transform:scale(0.7);
+   } 
+   to{
+      transform: scale(1);
+      right:0;
+      opacity:1
+   }
+}
+
+@keyframes hideRight{
+   from{
+      right:0px;
+      opacity:1;
+      transform: scale(1);
+   } 
+   to{
+      transform: scale(0.7);
+      right:300px;
+      opacity:0
+   }
+}
+
+.hide-right{
+   animation: hideRight 400ms forwards ;
+}
+
+.show-right{
+   animation: showRight 400ms forwards ;
+}
+
+.hide-left{
+   animation: hideLeft 400ms forwards ;
+}
+
+.show-left{
+   animation: showLeft 400ms forwards ;
+}
+
 .slider {
    grid-area: slider;
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: space-between;
+}
+
+.slider-container {
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+   grid-gap: 1em;
+   border-radius: 0.5rem;
+   width: 80%;
+   height: 100%;
+}
+
+.slider-img-div {
+   overflow: hidden;
+   padding: 2rem;
+   position: relative;
+   background-color: white;
+   border-radius: 0.5rem;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.slider-img {
+   position: relative;
+   max-height: 10rem;
+   min-height: 10rem;
+   width: 50%;
+   object-fit: contain;
+   border-radius: 0.5rem;
+   transition: all 0.3s ease;
+}
+
+.slider-img:hover {
+   transform: scale(1.1);
+}
+
+.slider-btn {
+   position: absolute;
+   left: 50%;
+   transform: translateX(-50%);
+   bottom: 10%;
+}
+
+.arrow {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   --: 1em;
+   width: var(--);
+   height: var(--);
+   
+   top: 0;
+   bottom: 0;
+   margin-top: auto;
+   margin-bottom: auto;
+   padding: 1em;
+   background-color: rgba(255, 255, 255, 0.5);
+   border-radius: 50%;
+}
+
+.arrow:hover, .arrow:hover {
+   background-color: white;
+   transition: background-color 250ms ease-in-out;
 }
 
 .main-top-rated {

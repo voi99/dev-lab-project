@@ -1,5 +1,6 @@
 import { animateCSS } from './modules/AnimateCSS.js'
 import { loadCart } from './modules/LoadCart.js'
+import { categoryList } from './modules/categoryList.js';
 
 const $ = (e) => document.querySelector(e)
 const $$ = (e) => document.querySelectorAll(e)
@@ -52,3 +53,5 @@ function removeAndAddClass(element, classToAdd, classToRemove) {
    element.classList.add(classToAdd)
    element.classList.remove(classToRemove)
 }
+
+categoryList();

@@ -37,6 +37,7 @@
       />
       <script src="src/headerFooter.js" type="module" defer></script>
       <script src="src/topRated.js" type="module" defer></script>
+      <script src="src/slider.js" defer></script>
    </head>
    <body>
       <header class="header">
@@ -56,21 +57,6 @@
                      >
                      <div class="dropdown">
                         <ul class="dropdown-list">
-                           <a href=""
-                              ><li class="dropdown-list-element">
-                                 kategorija 1
-                              </li></a
-                           >
-                           <a href=""
-                              ><li class="dropdown-list-element">
-                                 kategorija 2
-                              </li></a
-                           >
-                           <a href=""
-                              ><li class="dropdown-list-element">
-                                 kategorija 3
-                              </li></a
-                           >
                         </ul>
                      </div>
                   </div>
@@ -98,7 +84,28 @@
          </div>
       </header>
       <main class="main">
-         <div class="slider">slider</div>
+         <div class="slider">
+            <span class="arrow">
+                <i class="fas fa-chevron-left"></i>
+            </span>
+            <div class="slider-container" id="slider">
+               <div class="slider-img-div">
+                  <img src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg" alt="" class="slider-img">
+                  <button class="slider-btn">Read more</button>
+               </div>
+               <div class="slider-img-div">
+                  <img src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg" alt="" class="slider-img">
+                  <button class="slider-btn">Read more</button>
+               </div>
+               <div class="slider-img-div">
+                  <img src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg" alt="" class="slider-img">
+                  <button class="slider-btn">Read more</button>
+               </div>
+            </div>
+            <span class="arrow">
+                <i class="fas fa-chevron-right"></i>
+            </span>
+         </div>
          <div class="main-top-rated">
             <h2 class="title">top rated</h2>
             <div class="loading-circle loading-circle-desktop">

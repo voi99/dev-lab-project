@@ -122,6 +122,7 @@ body {
 
 .dropdown {
    display: none;
+   z-index: 1;
 }
 
 .showNav {
