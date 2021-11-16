@@ -108,7 +108,9 @@
    display: flex;
    justify-content: center;
    align-items: center;
+   z-index: 1000;
 }
+
 .added-to-cart {
    display: inline-block;
    border-radius: 0.5rem;
@@ -162,6 +164,11 @@
    padding: 2.5rem 1rem;
 }
 
+.modal-window-product .loading-circle {
+   height: 15rem;
+   width: 15rem;
+}
+
 .modal-window-background {
    border-radius: 1.5rem;
    overflow: hidden;
@@ -200,7 +207,14 @@
    background: var(--white);
 }
 
-.modal-window-product > * {
+.loaded {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   flex-direction: column;
+}
+
+.loaded > * {
    width: 100%;
 }
 
@@ -292,7 +306,7 @@
       width: 80%;
    }
 
-   .modal-window-product > * {
+   .loaded > * {
       width: 85%;
    }
 }
@@ -312,7 +326,7 @@
       width: 60%;
    }
 
-   .modal-window-product > * {
+   .loaded > * {
       width: 75%;
    }
 }
