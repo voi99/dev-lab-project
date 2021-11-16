@@ -1,4 +1,5 @@
 import { addProductToCart } from './modules/AddToCart.js'
+import { openModal } from './modules/OpenModal.js'
 
 const $ = (e) => document.querySelector(e)
 const $$ = (e) => document.querySelectorAll(e)
@@ -27,12 +28,19 @@ function loadAndAppendProducts() {
                        .slice(0, 3)
                        .join(' ')}</strong>
                 </div>
-                <div class="card-img">
-                    <img src="${product.image}">
-                </div>
                `
 
+            const productCardImg = document.createElement('div')
+            productCardImg.classList.add('card-img')
+
+            const productImg = document.createElement('img')
+            productImg.src = product.image
+            productImg.dataset.id = product.id
+            productCardImg.appendChild(productImg)
+
             productCard.innerHTML = productHTML
+            productImg.addEventListener('click', openModal)
+            productCard.appendChild(productCardImg)
             const cardFooter = document.createElement('div')
             cardFooter.classList.add('card-footer')
 
@@ -60,9 +68,7 @@ function loadAndAppendProducts() {
          })
       })
       .then(() => {
-         Array.from($$('.loading-circle')).forEach((circle) =>
-            circle.classList.add('hide')
-         )
+         $('.main-top-rated .loading-circle').classList.add('hide')
          $('.load-more-btn').classList.remove('hide')
          $('.load-more-btn').addEventListener('click', loadMoreIProducts)
       })
