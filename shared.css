@@ -83,7 +83,8 @@ body {
 .header,
 .header-nav,
 .cart-dropdown,
-.footer {
+.footer,
+.modal-window-background {
    background: var(--l-gradient);
    animation: bg-animation 2.5s infinite alternate;
    background-size: 200%;
@@ -336,6 +337,10 @@ body {
    height: 100%;
    background: var(--dark-blue);
    border-radius: 50%;
+}
+
+.disable-scroll {
+   overflow: hidden;
 }
 
 @keyframes spin {

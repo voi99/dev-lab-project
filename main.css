@@ -248,7 +248,9 @@
    display: flex;
    justify-content: center;
    align-items: center;
+   z-index: 1000;
 }
+
 .added-to-cart {
    display: inline-block;
    border-radius: 0.5rem;
@@ -275,6 +277,139 @@
 
 .fb-feed iframe {
    border-radius: 0.5rem;
+}
+
+.modal-window-wrap {
+   z-index: 100;
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.5);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.modal-window {
+   position: fixed;
+   width: 90vw;
+   height: 90vh;
+   background-color: var(--space-blue);
+   border-radius: 0.5rem;
+   display: flex;
+   justify-content: center;
+   gap: 1rem;
+   padding: 2.5rem 1rem;
+}
+
+.modal-window-product .loading-circle {
+   height: 15rem;
+   width: 15rem;
+}
+
+.modal-window-background {
+   border-radius: 1.5rem;
+   overflow: hidden;
+   position: relative;
+   width: 100%;
+}
+
+.modal-window-product {
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   height: 90%;
+   width: 100%;
+   background: var(--dark-blue);
+   border-radius: 1.5rem 1.5rem 0 0;
+   padding: 1.5rem;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   flex-direction: column;
+   overflow: hidden;
+   overflow-y: scroll;
+}
+
+.modal-window-product::-webkit-scrollbar {
+   width: 0.6rem;
+}
+
+.modal-window-product::-webkit-scrollbar-thumb {
+   background: var(--light-space-blue);
+   border-radius: 1rem;
+}
+
+/* Handle on hover */
+.modal-window-product::-webkit-scrollbar-thumb:hover {
+   background: var(--white);
+}
+
+.loaded {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   flex-direction: column;
+}
+
+.loaded > * {
+   width: 100%;
+}
+
+.modal-window-product-title strong {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin: 1rem 0rem 0rem;
+}
+
+.modal-window-product-img {
+   min-height: 15rem;
+}
+
+.modal-window-product-title p {
+   margin: 0.6rem 0rem 0.2rem;
+}
+
+.modal-window-product-rating {
+   padding: 1rem;
+}
+
+.modal-window-product * {
+   text-align: center;
+}
+
+.modal-window-product-desc p {
+   font-size: 0.9em;
+}
+
+.modal-window-product-add-to-cart {
+   text-align: center;
+   padding: 0.5rem;
+}
+
+.close-modal-btn {
+   position: absolute;
+   top: 25;
+   right: 15;
+   cursor: pointer;
+   transition: all 0.3s ease;
+}
+
+.close-modal-btn:hover {
+   transform: scale(1.2);
+   color: var(--light-brown);
+}
+
+.modal-window-product-add-to-cart .btn:hover {
+   background: var(--light-brown);
+   transform: scale(1.05);
+}
+
+.checked {
+   color: var(--light-brown);
 }
 
 .hide {
@@ -306,6 +441,14 @@
    .loading-circle-desktop {
       margin: auto calc(100% -20rem);
    }
+
+   .modal-window-background {
+      width: 80%;
+   }
+
+   .loaded > * {
+      width: 85%;
+   }
 }
 
 /* Laptop Design */
@@ -317,5 +460,13 @@
          'slider slider slider slider best'
          'top-rated top-rated top-rated top-rated fb-feed'
          'top-rated top-rated top-rated top-rated .';
+   }
+
+   .modal-window-background {
+      width: 60%;
+   }
+
+   .loaded > * {
+      width: 75%;
    }
 }
