@@ -1,6 +1,6 @@
 import { animateCSS } from './modules/AnimateCSS.js'
-import { loadCart } from './modules/LoadCart.js'
 import { categoryList } from './modules/categoryList.js';
+import { loadCart } from './modules/LoadMiniCart.js'
 
 const $ = (e) => document.querySelector(e)
 const $$ = (e) => document.querySelectorAll(e)
@@ -12,6 +12,7 @@ const $$ = (e) => document.querySelectorAll(e)
    const socialMedia = $$('.footer-follow-us-social-media i')
    const cartIcon = $('.cart-wrap')
    const cartDropdown = $('.cart-dropdown')
+   loadCart()
 
    navIcon.addEventListener('click', (e) => {
       changeIconAndAnimate(e, nav)
