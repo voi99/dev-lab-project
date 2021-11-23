@@ -1,8 +1,6 @@
 import { animateCSS } from './modules/AnimateCSS.js'
-const CODE_TEXT = `import {bestDevelopers} from 'unknownDevelopers.js';
-bestDevelopers.forEach((developer)=>{;
-!WORLD.push(developer);
-});`.split('')
+const CODE_TEXT = `authors = "SELECT authors FROM rhapsody";
+print(authors)`.split('')
 const $ = (e) => document.querySelector(e)
 const KEYBOARD_TYPING = new Audio('../assets/audio/typing.mp3')
 const KEYBOARD_ENTER = new Audio('../assets/audio/enter.mp3')
@@ -41,8 +39,6 @@ function typeLetterAndPlayAudio(props) {
    props.typing.play()
    if (props.codeText[position] === ';') {
       props.codeSection.innerHTML += '<br/>'
-   } else if (props.codeText[position] === '!') {
-      props.codeSection.innerHTML += '&emsp; &emsp; &emsp;'
    } else {
       props.codeSection.innerHTML += props.codeText[position]
    }
