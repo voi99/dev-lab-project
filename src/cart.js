@@ -47,6 +47,7 @@ function handlePay(e) {
          })
       localStorage.removeItem('cart')
       loadCart()
+      console.log('doslo')
    } catch (error) {
       showErrorMessage()
    }
