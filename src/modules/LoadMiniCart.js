@@ -32,6 +32,8 @@ export const loadCart = () => {
          productsSection.appendChild(cartProduct)
       })
    } catch {
+      const noOfProducts = $('.cart-items-no')
+      noOfProducts.classList.add('hide')
       productsSection.innerHTML = `<div class="cart-no-products-text">
        empty </div> <div class='cart-no-products-emoji'><i class="fas fa-sad-tear"></i>`
    }
