@@ -38,6 +38,7 @@
    display: grid;
    grid-template-columns: 1fr;
    gap: 0.85rem;
+   grid-auto-rows: 26rem;
 }
 
 .card-img > img:hover {

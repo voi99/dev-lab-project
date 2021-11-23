@@ -212,7 +212,7 @@ body {
 .card-img {
    overflow: hidden;
    border-radius: 0.5rem;
-   padding: 0.85rem;
+   padding: 0.85rem 2rem;
    background-color: var(--white);
    height: 20rem;
    cursor: pointer;
@@ -414,10 +414,6 @@ body {
       display: none;
    }
 
-   /* .fas {
-      padding: 0rem 0.5rem;
-   } */
-
    .header-nav-list-element {
       display: inline-block;
       padding: 0.7rem 1.4rem;
@@ -514,5 +510,20 @@ body {
       grid-template-areas: 'info pages privacy follow';
       gap: 0rem;
       padding: 3.2rem 4rem;
+   }
+}
+
+@media only screen and (min-width: 1536px) {
+   body {
+      width: 70%;
+      margin: auto;
+   }
+
+   .cart-dropdown {
+      width: 16vw;
+   }
+
+   .cart-dropdown {
+      right: calc(15% + 0.85rem);
    }
 }
