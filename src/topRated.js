@@ -4,7 +4,13 @@ import { openModal } from './modules/OpenModal.js'
 const $ = (e) => document.querySelector(e)
 const $$ = (e) => document.querySelectorAll(e)
 
-let shown = 6
+const windowSize = window.innerWidth
+let shown
+if (windowSize > 1600) {
+   shown = 8
+} else {
+   shown = 6
+}
 
 function loadAndAppendProducts() {
    fetch('https://fakestoreapi.com/products', {
@@ -75,10 +81,16 @@ function loadAndAppendProducts() {
 }
 
 function loadMoreIProducts(e) {
+   let show
+   if (shown === 8) {
+      show = 4
+   } else {
+      show = 3
+   }
    const products = Array.from($$('.main-top-rated-products-product'))
-   const productsToLoad = products.slice(shown, shown + 3)
+   const productsToLoad = products.slice(shown, shown + show)
    productsToLoad.forEach((product) => product.classList.remove('hide'))
-   shown += 3
+   shown += show
    if (products.length <= shown) e.target.classList.add('hide')
 }
 
