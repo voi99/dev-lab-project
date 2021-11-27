@@ -43,7 +43,6 @@ body {
 
 /* Mobile Design*/
 .header {
-   font-weight: bold;
    height: 3.5rem;
    display: flex;
    justify-content: space-between;
@@ -59,6 +58,7 @@ body {
 }
 
 .logo {
+   font-weight: bold;
    letter-spacing: 0.08rem;
 }
 
@@ -160,8 +160,8 @@ body {
    flex-direction: column;
 }
 
-.cart-dropdown > strong {
-   padding: 0.8rem 0rem 0.2rem;
+.cart-dropdown-title {
+   margin: 0.5rem 0rem 0rem;
 }
 
 .cart-dropdown > div:nth-child(n + 1) {
@@ -201,7 +201,7 @@ body {
 
 .card {
    background: var(--space-blue);
-   padding: 1.2rem 1.8rem;
+   padding: 1.2rem;
    border-radius: 0.5rem;
    transition: all 0.3s ease;
    display: flex;
@@ -212,9 +212,9 @@ body {
 .card-img {
    overflow: hidden;
    border-radius: 0.5rem;
-   padding: 0.85rem 2rem;
+   padding: 1rem;
    background-color: var(--white);
-   height: 20rem;
+   height: 14rem;
    cursor: pointer;
 }
 
@@ -477,6 +477,14 @@ body {
       padding: 0.5rem;
    }
 
+   .main-top-rated-products-product .card-img {
+      padding: 2rem;
+   }
+
+   .card-img {
+      height: 12rem;
+   }
+
    .footer {
       grid-template-columns: repeat(2, 1fr);
       grid-template-areas: 'info pages' 'privacy follow';
@@ -493,10 +501,16 @@ body {
 @media only screen and (min-width: 1024px) {
    body {
       font-size: 20px;
+      width: 95%;
+      margin: auto;
    }
 
    .dropdown {
       top: 3.85rem;
+   }
+
+   .cart-dropdown {
+      right: calc(2.5% + 0.85rem);
    }
 
    #cart:hover,
@@ -513,10 +527,9 @@ body {
    }
 }
 
-@media only screen and (min-width: 1536px) {
+@media only screen and (min-width: 1600px) {
    body {
       width: 70%;
-      margin: auto;
    }
 
    .cart-dropdown {
