@@ -1,7 +1,8 @@
 import { animateCSS } from './AnimateCSS.js'
 
 export const addToCartNotificaiton = (btn) => {
-   animateCSS(btn, 'heartBeat').then(() => {
+   animateCSS(btn, 'headShake')
+   setTimeout(() => {
       const addedNotification = document.querySelector('.added-to-cart-wrap')
       addedNotification.classList.remove('hide')
       animateCSS(addedNotification, 'bounceIn').then(() => {
@@ -15,5 +16,5 @@ export const addToCartNotificaiton = (btn) => {
       })
       const cartIcon = document.querySelector('.cart-wrap')
       animateCSS(cartIcon, 'wobble')
-   })
+   }, 400)
 }

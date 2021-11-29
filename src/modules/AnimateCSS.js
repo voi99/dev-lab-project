@@ -5,6 +5,7 @@ export const animateCSS = (node, animation, prefix = 'animate__') =>
       const animationName = `${prefix}${animation}`
 
       node.classList.add(`${prefix}animated`, animationName)
+      node.style.setProperty('--animate-duration', '1.4s')
 
       function handleAnimationEnd(event) {
          event.stopPropagation()

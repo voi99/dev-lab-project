@@ -1,38 +1,41 @@
 import { loadCart } from './LoadMiniCart.js'
 import { addToCartNotificaiton } from './AddToCartNotification.js'
 
-export const addProductToCart = (e) => {
+export const addProductToCart = async (e) => {
    const productID = e.target.dataset['id']
    const btn = e.currentTarget
-   fetch(`https://fakestoreapi.com/products/${productID}`, {
-      method: 'get',
-   })
-      .then((res) => res.json())
-      .then((data) => {
-         if (!JSON.parse(localStorage.getItem('cart'))) {
-            data.quantity = 1
-            localStorage.setItem('cart', JSON.stringify([data]))
-            loadCart()
-         } else {
-            const oldCart = JSON.parse(localStorage.getItem('cart'))
-            let exists = false
+   addToCartNotificaiton(btn)
 
-            const newCart = oldCart.map((product) => {
-               if (productID == product.id) {
-                  product.quantity += 1
-                  exists = true
-               }
-               return product
-            })
+   try {
+      const response = await fetch(
+         `https://fakestoreapi.com/products/${productID}`
+      )
 
-            if (!exists) {
-               data.quantity = 1
-               newCart.push(data)
+      const data = await response.json()
+
+      if (!JSON.parse(localStorage.getItem('cart'))) {
+         data.quantity = 1
+         localStorage.setItem('cart', JSON.stringify([data]))
+         loadCart()
+      } else {
+         const oldCart = JSON.parse(localStorage.getItem('cart'))
+         let exists = false
+
+         const newCart = oldCart.map((product) => {
+            if (productID == product.id) {
+               product.quantity += 1
+               exists = true
             }
+            return product
+         })
 
-            localStorage.setItem('cart', JSON.stringify(newCart))
-            loadCart()
+         if (!exists) {
+            data.quantity = 1
+            newCart.push(data)
          }
-         addToCartNotificaiton(btn)
-      })
+
+         localStorage.setItem('cart', JSON.stringify(newCart))
+         loadCart()
+      }
+   } catch (error) {}
 }
