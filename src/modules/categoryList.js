@@ -3,7 +3,7 @@ export const categoryList = () => {
     .then(res => res.json())
     .then(data => {
         for (let i = 0; i < data.length; i++) {
-            document.querySelector('.dropdown-list').innerHTML += `<a href=""><li class="dropdown-list-element">${data[i]}</li></a>`;
+            document.querySelector('.dropdown-list').innerHTML += `<a href="/pages/list.html?category=${data[i]}"><li class="dropdown-list-element">${data[i]}</li></a>`;
         }
     });
 }
