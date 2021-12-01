@@ -280,14 +280,25 @@
    display: flex;
    justify-content: center;
    align-items: center;
-   /* remove later */
-   background: transparent;
-   padding: 0rem;
+
    overflow: hidden;
+}
+
+.fb-feed-title {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-bottom: 0.5rem;
+}
+
+.fb-feed-title > h4 {
+   margin: 0;
+   padding-left: 0.5rem;
 }
 
 .fb-feed iframe {
    border-radius: 0.5rem;
+   max-width: 100%;
 }
 
 .modal-window-wrap {
