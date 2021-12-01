@@ -3,11 +3,11 @@
    margin: 0.85rem;
    display: grid;
    grid-template-columns: 1fr;
-   grid-template-areas: 'slider''top-rated''best''fb-feed';
-   gap: 0.6rem;
+   grid-template-areas: 'slider' 'top-rated' 'best' 'fb-feed';
+   gap: 0.7rem;
 }
 
-.main>* {
+.main > * {
    background-color: var(--space-blue);
    border-radius: 0.5rem;
    padding: 1rem;
@@ -37,7 +37,7 @@
    to {
       transform: scale(1);
       left: 0;
-      opacity: 1
+      opacity: 1;
    }
 }
 
@@ -51,7 +51,7 @@
    to {
       transform: scale(0.7);
       left: 300px;
-      opacity: 0
+      opacity: 0;
    }
 }
 
@@ -65,7 +65,7 @@
    to {
       transform: scale(1);
       right: 0;
-      opacity: 1
+      opacity: 1;
    }
 }
 
@@ -79,7 +79,7 @@
    to {
       transform: scale(0.7);
       right: 300px;
-      opacity: 0
+      opacity: 0;
    }
 }
 
@@ -105,13 +105,15 @@
    flex-direction: row;
    align-items: center;
    justify-content: space-between;
+   height: 20rem;
+   padding: 1rem 0.3rem;
 }
 
 .slider-container {
    display: flex;
    gap: 1em;
    border-radius: 0.5rem;
-   width: 80%;
+   width: 90%;
    height: 100%;
 }
 
@@ -136,10 +138,11 @@
    position: relative;
    max-height: 10rem;
    min-height: 10rem;
-   width: 50%;
+   width: 100%;
    object-fit: contain;
    border-radius: 0.5rem;
    transition: all 0.3s ease;
+   cursor: pointer;
 }
 
 .slider-img:hover {
@@ -161,19 +164,20 @@
    --: 1em;
    width: var(--);
    height: var(--);
-
    top: 0;
    bottom: 0;
-   margin-top: auto;
-   margin-bottom: auto;
+   margin: auto 0.2rem;
    padding: 1em;
    background-color: rgba(255, 255, 255, 0.5);
    border-radius: 50%;
+   cursor: pointer;
 }
 
-.arrow:hover, .arrow:hover {
+.arrow:hover,
+.arrow:hover {
    background-color: white;
    transition: background-color 250ms ease-in-out;
+   color: var(--dark-blue);
 }
 
 .main-top-rated {
@@ -190,8 +194,8 @@
    grid-auto-rows: 23rem;
 }
 
-.card-img>img:hover {
-   transform: scale(1.03);
+.card-img > img:hover {
+   transform: scale(1.1);
 }
 
 .card-footer {
@@ -279,14 +283,25 @@
    display: flex;
    justify-content: center;
    align-items: center;
-   /* remove later */
-   background: transparent;
-   padding: 0rem;
+
    overflow: hidden;
+}
+
+.fb-feed-title {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-bottom: 0.5rem;
+}
+
+.fb-feed-title > h4 {
+   margin: 0;
+   padding-left: 0.5rem;
 }
 
 .fb-feed iframe {
    border-radius: 0.5rem;
+   max-width: 100%;
 }
 
 .modal-window-wrap {
@@ -341,6 +356,8 @@
    flex-direction: column;
    overflow-x: hidden;
    overflow-y: scroll;
+   scrollbar-width: thin;
+   scrollbar-color: var(--light-space-blue) transparent;
 }
 
 .modal-window-product::-webkit-scrollbar {
@@ -364,7 +381,7 @@
    flex-direction: column;
 }
 
-.loaded>* {
+.loaded > * {
    width: 100%;
 }
 
@@ -457,7 +474,7 @@
       width: 80%;
    }
 
-   .loaded>* {
+   .loaded > * {
       width: 85%;
    }
 
@@ -465,12 +482,16 @@
    .slider-img-div:last-child {
       display: flex;
    }
+
+   .slider {
+      height: 17rem;
+   }
 }
 
 /* Laptop Design */
 @media only screen and (min-width: 1024px) {
    .main {
-      grid-template-columns: repeat(4, 1fr) 1.5fr;
+      grid-template-columns: repeat(4, 1fr) 1.4fr;
       grid-template-areas:
          'slider slider slider slider best'
          'slider slider slider slider best'
@@ -482,8 +503,12 @@
       width: 60%;
    }
 
-   .loaded>* {
+   .loaded > * {
       width: 75%;
+   }
+
+   .slider {
+      height: 23rem;
    }
 }
 
