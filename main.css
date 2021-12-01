@@ -3,11 +3,11 @@
    margin: 0.85rem;
    display: grid;
    grid-template-columns: 1fr;
-   grid-template-areas: 'slider''top-rated''best''fb-feed';
+   grid-template-areas: 'slider' 'top-rated' 'best' 'fb-feed';
    gap: 0.6rem;
 }
 
-.main>* {
+.main > * {
    background-color: var(--space-blue);
    border-radius: 0.5rem;
    padding: 1rem;
@@ -37,7 +37,7 @@
    to {
       transform: scale(1);
       left: 0;
-      opacity: 1
+      opacity: 1;
    }
 }
 
@@ -51,7 +51,7 @@
    to {
       transform: scale(0.7);
       left: 300px;
-      opacity: 0
+      opacity: 0;
    }
 }
 
@@ -65,7 +65,7 @@
    to {
       transform: scale(1);
       right: 0;
-      opacity: 1
+      opacity: 1;
    }
 }
 
@@ -79,7 +79,7 @@
    to {
       transform: scale(0.7);
       right: 300px;
-      opacity: 0
+      opacity: 0;
    }
 }
 
@@ -171,7 +171,8 @@
    border-radius: 50%;
 }
 
-.arrow:hover, .arrow:hover {
+.arrow:hover,
+.arrow:hover {
    background-color: white;
    transition: background-color 250ms ease-in-out;
 }
@@ -190,7 +191,7 @@
    grid-auto-rows: 23rem;
 }
 
-.card-img>img:hover {
+.card-img > img:hover {
    transform: scale(1.03);
 }
 
@@ -341,6 +342,8 @@
    flex-direction: column;
    overflow-x: hidden;
    overflow-y: scroll;
+   scrollbar-width: thin;
+   scrollbar-color: var(--light-space-blue) transparent;
 }
 
 .modal-window-product::-webkit-scrollbar {
@@ -364,7 +367,7 @@
    flex-direction: column;
 }
 
-.loaded>* {
+.loaded > * {
    width: 100%;
 }
 
@@ -457,7 +460,7 @@
       width: 80%;
    }
 
-   .loaded>* {
+   .loaded > * {
       width: 85%;
    }
 
@@ -482,7 +485,7 @@
       width: 60%;
    }
 
-   .loaded>* {
+   .loaded > * {
       width: 75%;
    }
 }
