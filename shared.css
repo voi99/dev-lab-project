@@ -228,7 +228,6 @@ body {
    transition: all 0.3s ease;
 }
 
-
 .added-to-cart-wrap {
    width: 50%;
    position: fixed;
@@ -378,10 +377,9 @@ body {
    transform: scale(1.05);
 }
 
-
 .hide {
    display: none;
-} 
+}
 
 .footer {
    margin: 0.85rem;
