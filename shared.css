@@ -228,9 +228,9 @@ body {
    transition: all 0.3s ease;
 }
 
-/* .hide {
-   /* display: none; */
-/* }  */
+.hide {
+   display: none;
+}
 
 .footer {
    margin: 0.85rem;

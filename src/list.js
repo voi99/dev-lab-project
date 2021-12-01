@@ -1,3 +1,5 @@
+import { categoryList } from './modules/categoryList.js';
+
 let category;
 let serverData;
 let categories = [];
@@ -51,18 +53,17 @@ function filter() {
     fetch('https://fakestoreapi.com/products')
         .then((response) => response.json())
         .then((data) => {
+            console.log(data);
             serverData = data;
-            for (let i = 0; i < data.length; i++) {
-                if (!categories.includes(data[i].category)) categories.push(data[i].category)
-            };
-            if(!category) appendCategories(categories);
-            filter();
-        });
+            categories = categoryList(data);
+            if (!category) appendCategories(categories);
+        }).then(filter);
+        
     document.getElementById('myRange').addEventListener('input', (e) => {
         document.querySelector(".slide-value").innerHTML = (e.target.value / 10);
         filter();
     })
-    document.querySelector('.filter-search-input').addEventListener('keyup', () => {
-        filter();
-    })
+    document.querySelector('.filter-search-input').addEventListener('keyup', filter)
+    document.querySelector('.filter-search-btn').addEventListener('click', filter);
+    console.log(serverData);
 })();
