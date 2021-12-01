@@ -1,4 +1,5 @@
-import { categoryList } from './modules/categoryList.js';
+import { addProductToCart } from './modules/AddToCart.js'
+import { openModal } from './modules/OpenModal.js'
 
 let category;
 let serverData;
@@ -7,14 +8,35 @@ let categories = [];
 function addToMain(product, i) {
     let div = document.createElement("div");
     div.classList.add('main-top-rated-products-product', 'card');
-    div.innerHTML += `<div class="card-title">
-    <strong class="product-title">${product.title.split(' ').slice(0, 3).join(" ")}</strong>
-</div>
-<div class="card-img"><img src="${product.image}" data-id="${product.id}"></div>
-<div class="card-footer">
-    <strong class="product-price">$ ${product.price}</strong>
-    <button class="btn add-to-cart-btn" data-id="${product.id}">add to cart</button>
-</div>`;
+    div.innerHTML += `
+    <div class="card-title">
+        <strong class="product-title">${product.title.split(' ').slice(0, 3).join(" ")}</strong>
+    </div>`;
+
+    let imgDiv = document.createElement('div');
+    imgDiv.classList.add('card-img');
+    let cardImg = document.createElement('img')
+    cardImg.src = product.image;
+    cardImg.dataset.id = product.id;
+    cardImg.addEventListener('click', openModal);
+    imgDiv.appendChild(cardImg);
+    div.appendChild(imgDiv);
+
+    let cardFooter = document.createElement('div');
+    cardFooter.classList.add('card-footer')
+    cardFooter.innerHTML += `<strong class="product-price">$ ${product.price}</strong>`;
+    let button = document.createElement('button');
+    button.classList.add('btn', 'add-to-cart-btn');
+    button.dataset.id = product.id;
+    button.textContent = 'add to cart';
+    button.addEventListener('click', addProductToCart, {
+        once: true,
+    })
+    cardFooter.appendChild(button);
+
+    div.appendChild(cardFooter);
+
+
     document.querySelector("main").appendChild(div);
     setTimeout(() => div.classList.add("animate"), i * 200);
 }
@@ -55,10 +77,14 @@ function filter() {
         .then((data) => {
             console.log(data);
             serverData = data;
-            categories = categoryList(data);
+            categories = [];
+            for (let i = 0; i < data.length; i++) {
+                if (!categories.includes(data[i].category)) categories.push(data[i].category)
+            };
+
             if (!category) appendCategories(categories);
         }).then(filter);
-        
+
     document.getElementById('myRange').addEventListener('input', (e) => {
         document.querySelector(".slide-value").innerHTML = (e.target.value / 10);
         filter();

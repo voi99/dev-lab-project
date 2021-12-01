@@ -176,14 +176,19 @@
     }
 }
 
+@media only screen and (min-width: 550px) and (max-width: 768px) {
+    .card {
+        flex: 40%;
+    }
+}
+
 @media only screen and (min-width: 768px) {
     body {
         font-size: 18px;
     }
 
     .card {
-        height: auto;
-        flex: 30vw;
+        flex: 30%;
     }
 
     .slider-filter-div {
@@ -208,8 +213,7 @@
     }
 
     .card {
-        height: auto;
-        flex: 20vw;
+        flex: 20%;
     }
 
     #cart:hover, .footer a:hover {

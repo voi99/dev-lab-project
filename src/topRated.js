@@ -1,6 +1,5 @@
 import { addProductToCart } from './modules/AddToCart.js'
 import { openModal } from './modules/OpenModal.js'
-import { categoryList } from './modules/categoryList.js';
 
 const $ = (e) => document.querySelector(e)
 const $$ = (e) => document.querySelectorAll(e)
@@ -18,10 +17,7 @@ function loadAndAppendProducts() {
       method: 'get',
    })
       .then((res) => res.json())
-      .then((data) => {
-         categoryList(data);
-         return data.sort((a, b) => a.rating.rate - b.rating.rate).slice(0, 12)
-      })
+      .then((data) => data.sort((a, b) => a.rating.rate - b.rating.rate).slice(0, 12))
       .then((data) => {
          const ratedProductsSection = $('.main-top-rated-products')
          data.forEach((product, index) => {

@@ -3,11 +3,11 @@
    margin: 0.85rem;
    display: grid;
    grid-template-columns: 1fr;
-   grid-template-areas: 'slider' 'top-rated' 'best' 'fb-feed';
+   grid-template-areas: 'slider''top-rated''best''fb-feed';
    gap: 0.6rem;
 }
 
-.main > * {
+.main>* {
    background-color: var(--space-blue);
    border-radius: 0.5rem;
    padding: 1rem;
@@ -27,72 +27,76 @@
 /* SLIDER */
 /* ----------------------------------------------------------------------------- */
 
-@keyframes showLeft{
-   from{
-      left:-300px;
-      opacity:0;
-      transform:scale(0.7);
-   } 
-   to{
-      transform: scale(1);
-      left:0;
-      opacity:1
-   }
-}
-
-@keyframes hideLeft{
-   from{
-      left:0px;
-      opacity:1;
-      transform: scale(1);
-   } 
-   to{
+@keyframes showLeft {
+   from {
+      left: -300px;
+      opacity: 0;
       transform: scale(0.7);
-      left:300px;
-      opacity:0
+   }
+
+   to {
+      transform: scale(1);
+      left: 0;
+      opacity: 1
    }
 }
 
-@keyframes showRight{
-   from{
-      right:-300px;
-      opacity:0;
-      transform:scale(0.7);
-   } 
-   to{
+@keyframes hideLeft {
+   from {
+      left: 0px;
+      opacity: 1;
       transform: scale(1);
-      right:0;
-      opacity:1
    }
-}
 
-@keyframes hideRight{
-   from{
-      right:0px;
-      opacity:1;
-      transform: scale(1);
-   } 
-   to{
+   to {
       transform: scale(0.7);
-      right:300px;
-      opacity:0
+      left: 300px;
+      opacity: 0
    }
 }
 
-.hide-right{
-   animation: hideRight 400ms forwards ;
+@keyframes showRight {
+   from {
+      right: -300px;
+      opacity: 0;
+      transform: scale(0.7);
+   }
+
+   to {
+      transform: scale(1);
+      right: 0;
+      opacity: 1
+   }
 }
 
-.show-right{
-   animation: showRight 400ms forwards ;
+@keyframes hideRight {
+   from {
+      right: 0px;
+      opacity: 1;
+      transform: scale(1);
+   }
+
+   to {
+      transform: scale(0.7);
+      right: 300px;
+      opacity: 0
+   }
 }
 
-.hide-left{
-   animation: hideLeft 400ms forwards ;
+.hide-right {
+   animation: hideRight 400ms forwards;
 }
 
-.show-left{
-   animation: showLeft 400ms forwards ;
+.show-right {
+   animation: showRight 400ms forwards;
+}
+
+.hide-left {
+   animation: hideLeft 400ms forwards;
+}
+
+.show-left {
+   animation: showLeft 400ms forwards;
 }
 
 .slider {
@@ -104,15 +108,15 @@
 }
 
 .slider-container {
-   display: grid;
-   grid-template-columns: 1fr 1fr 1fr;
-   grid-gap: 1em;
+   display: flex;
+   gap: 1em;
    border-radius: 0.5rem;
    width: 80%;
    height: 100%;
 }
 
 .slider-img-div {
+   flex: 30%;
    overflow: hidden;
    padding: 2rem;
    position: relative;
@@ -121,6 +125,11 @@
    display: flex;
    align-items: center;
    justify-content: center;
+}
+
+.slider-img-div:first-child,
+.slider-img-div:last-child {
+   display: none;
 }
 
 .slider-img {
@@ -152,7 +161,7 @@
    --: 1em;
    width: var(--);
    height: var(--);
-   
+
    top: 0;
    bottom: 0;
    margin-top: auto;
@@ -181,7 +190,7 @@
    grid-auto-rows: 23rem;
 }
 
-.card-img > img:hover {
+.card-img>img:hover {
    transform: scale(1.03);
 }
 
@@ -355,7 +364,7 @@
    flex-direction: column;
 }
 
-.loaded > * {
+.loaded>* {
    width: 100%;
 }
 
@@ -448,8 +457,13 @@
       width: 80%;
    }
 
-   .loaded > * {
+   .loaded>* {
       width: 85%;
+   }
+
+   .slider-img-div:first-child,
+   .slider-img-div:last-child {
+      display: flex;
    }
 }
 
@@ -468,7 +482,7 @@
       width: 60%;
    }
 
-   .loaded > * {
+   .loaded>* {
       width: 75%;
    }
 }

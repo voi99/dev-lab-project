@@ -1,4 +1,5 @@
-let container = document.querySelector('.slider-container');
+import { openModal } from './modules/OpenModal.js'
+
 
 function checkKey(e) {
     e = e || window.event;
@@ -10,19 +11,25 @@ function checkKey(e) {
     }
 }
 
-
 (function () {
+    let container = document.querySelector('.slider-container');
     let first = 0;
     let second = 1;
     let third = 2;
     let pictures = [];
     let animationIsRunning = false;
     let images = document.querySelectorAll('.slider-img');
+    images[0].addEventListener('click', openModal)
+    images[1].addEventListener('click', openModal)
+    images[2].addEventListener('click', openModal)
     
     function changeImages() {
-        images[0].src = pictures[first];
-        images[1].src = pictures[second];
-        images[2].src = pictures[third];
+        images[0].src = pictures[first].image;
+        images[0].dataset.id = first + 1;
+        images[1].src = pictures[second].image;
+        images[1].dataset.id = second + 1;
+        images[2].src = pictures[third].image;
+        images[2].dataset.id = third + 1;
     }
     
     fetch('https://fakestoreapi.com/products', {
@@ -30,10 +37,8 @@ function checkKey(e) {
     })
         .then((res) => res.json())
         .then((data) => {
-            pictures = data.map(e => e.image);
-            images[0].src = pictures[first];
-            images[1].src = pictures[second];
-            images[2].src = pictures[third];
+            pictures = data;
+            changeImages();
         });
 
     let arrows = document.querySelectorAll('.arrow');
