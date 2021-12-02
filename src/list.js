@@ -91,5 +91,4 @@ function filter() {
     })
     document.querySelector('.filter-search-input').addEventListener('keyup', filter)
     document.querySelector('.filter-search-btn').addEventListener('click', filter);
-    console.log(serverData);
 })();
