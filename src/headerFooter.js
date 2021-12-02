@@ -28,7 +28,7 @@ function callClickHandler(e) {
       cartClickHandler(e, cartDropdown)
    } else if (
       e.target.classList.contains('fa-window-close') ||
-      e.target.classList.contains(' fa-sliders-h ')
+      e.target.classList.contains('fa-sliders-h')
    ) {
       const nav = $('.header-nav')
       changeIconAndAnimate(e, nav)
