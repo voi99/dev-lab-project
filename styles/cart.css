@@ -97,11 +97,8 @@
 
 .remove-from-cart-btn {
    padding: 0.2rem 0.7rem;
-   background-color: var(--light-brown);
-}
-
-.checked {
-   color: var(--light-brown);
+   background-color: var(--pink);
+   transition: all 0.3s ease;
 }
 
 .main-cart-pay {
@@ -114,11 +111,7 @@
    transition: all 0.3s ease;
    padding: 0.3rem;
    margin: 0.3rem;
-   background: var(--l-gradient);
-}
-
-.remove-from-cart-btn {
-   transition: all 0.3s ease;
+   background: var(--pink);
 }
 
 .main-cart-end-of-purchase-icon {

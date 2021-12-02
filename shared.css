@@ -10,6 +10,7 @@
    --light-space-blue: #2a3750;
    --light-space-blue-transparent: #2a37508f;
    --yellowgreen: #9acd32;
+   --rating-yellow: #f7d51a;
    --l-gradient: linear-gradient(
       to right,
       var(--light-purple),
@@ -492,6 +493,10 @@ body {
    overflow: hidden;
 }
 
+.checked {
+   color: var(--pink);
+}
+
 @keyframes spin {
    from {
       transform: rotate(0);
@@ -661,6 +666,7 @@ body {
 
    .cart-dropdown {
       right: calc(2.5% + 0.85rem);
+      width: 18vw;
    }
 
    #cart:hover,
@@ -683,7 +689,7 @@ body {
    }
 
    .cart-dropdown {
-      width: 16vw;
+      width: 14vw;
    }
 
    .cart-dropdown {

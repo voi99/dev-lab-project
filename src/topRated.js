@@ -13,50 +13,50 @@ if (windowSize > 1600) {
 }
 
 function best(data) {
-
    const displayItem = (item, target, info) => {
-
-      let imgDiv = document.createElement('div');
-      imgDiv.classList.add('best-img-div');
-      let img = document.createElement('img');
-      img.classList.add('best-img');
-      img.dataset.id = item.id;
+      let imgDiv = document.createElement('div')
+      imgDiv.classList.add('best-img-div')
+      let img = document.createElement('img')
+      img.classList.add('best-img')
+      img.dataset.id = item.id
       img.src = item.image
-      img.addEventListener('click', openModal);
+      img.addEventListener('click', openModal)
       imgDiv.appendChild(img)
 
-      let detailsDiv = document.createElement('div');
+      let detailsDiv = document.createElement('div')
       detailsDiv.classList.add('best-details')
       detailsDiv.innerHTML += `
-      <div>${item.title.split(' ')[0]}</div>
+      <div>${item.title.split(' ').splice(0, 3).join(' ')}</div>
       <div> $ ${item.price}</div>
-      <div>${info == 'rate' ? `Rate: ${item.rating[info]}/5` : `Count: ${item.rating[info]}`}</div>`;
-      let btn = document.createElement('button');
-      btn.classList.add('btn', 'add-to-cart-btn');
+      <div>${
+         info == 'rate'
+            ? `Rate: ${item.rating[info]}/5`
+            : `Count: ${item.rating[info]}`
+      }</div>`
+      let btn = document.createElement('button')
+      btn.classList.add('btn', 'add-to-cart-btn')
       btn.innerHTML = 'add to cart'
       btn.dataset.id = item.id
       btn.addEventListener('click', addProductToCart, {
          once: true,
       })
-      detailsDiv.appendChild(btn);
+      detailsDiv.appendChild(btn)
 
-      target.appendChild(imgDiv);
-      target.appendChild(detailsDiv);
-
+      target.appendChild(imgDiv)
+      target.appendChild(detailsDiv)
    }
 
-   let bestRated = data[0];
-   let mostPopular = data[0];
+   let bestRated = data[0]
+   let mostPopular = data[0]
    for (let i = 0; i < data.length; i++) {
-      if (bestRated.rating.rate < data[i].rating.rate) bestRated = data[i];
+      if (bestRated.rating.rate < data[i].rating.rate) bestRated = data[i]
       if (mostPopular.rating.count < data[i].rating.count) mostPopular = data[i]
    }
 
-   let containers = document.querySelectorAll('.best-div');
+   let containers = document.querySelectorAll('.best-div')
 
-   displayItem(bestRated, containers[0], "rate");
-   displayItem(mostPopular, containers[1], "count");
-
+   displayItem(bestRated, containers[0], 'rate')
+   displayItem(mostPopular, containers[1], 'count')
 }
 
 function loadAndAppendProducts() {
@@ -65,8 +65,8 @@ function loadAndAppendProducts() {
    })
       .then((res) => res.json())
       .then((data) => {
-         best(data);
-         return data.sort((a, b) => a.rating.rate - b.rating.rate).slice(0, 12)
+         best(data)
+         return data.sort((a, b) => b.rating.rate - a.rating.rate).slice(0, 12)
       })
       .then((data) => {
          const ratedProductsSection = $('.main-top-rated-products')
@@ -78,11 +78,23 @@ function loadAndAppendProducts() {
                 <div class="card-title">
                     <p class="product-category">${product.category}</p>
                     <strong class="product-title">${product.title
-                  .split(' ')
-                  .slice(0, 3)
-                  .join(' ')}</strong>
+                       .split(' ')
+                       .slice(0, 3)
+                       .join(' ')}</strong>
                 </div>
                `
+            const productDivRating = document.createElement('div')
+            productDivRating.classList.add('cart-rating')
+
+            const productRating = Math.round(product.rating.rate)
+
+            for (let i = 0; i < 5; i++) {
+               if (i <= productRating) {
+                  productDivRating.innerHTML += `<span class="fa fa-star checked"></span>`
+               } else {
+                  productDivRating.innerHTML += `<span class="fa fa-star"></span>`
+               }
+            }
 
             const productCardImg = document.createElement('div')
             productCardImg.classList.add('card-img')
@@ -93,6 +105,7 @@ function loadAndAppendProducts() {
             productCardImg.appendChild(productImg)
 
             productCard.innerHTML = productHTML
+            productCard.appendChild(productDivRating)
             productImg.addEventListener('click', openModal)
             productCard.appendChild(productCardImg)
             const cardFooter = document.createElement('div')
