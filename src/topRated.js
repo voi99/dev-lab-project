@@ -26,7 +26,7 @@ function best(data) {
       let detailsDiv = document.createElement('div')
       detailsDiv.classList.add('best-details')
       detailsDiv.innerHTML += `
-      <div>${item.title.split(' ').splice(0, 3).join(' ')}</div>
+      <div>${item.title.split(' ').splice(0, 2).join(' ')}</div>
       <div> $ ${item.price}</div>
       <div>${
          info == 'rate'
