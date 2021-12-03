@@ -75,7 +75,7 @@ function checkKey(e) {
         if (third < 0) {
             third = pictures.length - 1
         }
-        setTimeout(changeImages, 70)
+        setTimeout(changeImages, 150)
         setTimeout(() => {
             images[0].classList.remove('hide-left');
             images[1].classList.remove('hide-left');
@@ -120,7 +120,7 @@ function checkKey(e) {
         if (third == pictures.length) {
             third = 0;
         }
-        setTimeout(changeImages, 70);
+        setTimeout(changeImages, 150);
         setTimeout(() => {
             images[0].classList.remove('hide-right');
             images[1].classList.remove('hide-right');
