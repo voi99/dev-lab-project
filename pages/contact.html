@@ -1,176 +1,231 @@
 <html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>rhapsody</title>
+      <link
+         rel="apple-touch-icon"
+         sizes="180x180"
+         href="/assets/icons/apple-touch-icon.png"
+      />
+      <link
+         rel="icon"
+         type="image/png"
+         sizes="32x32"
+         href="/assets/icons/favicon-32x32.png"
+      />
+      <link
+         rel="icon"
+         type="image/png"
+         sizes="16x16"
+         href="/assets/icons/favicon-16x16.png"
+      />
+      <link rel="manifest" href="/assets/icons/site.webmanifest" />
+      <meta name="msapplication-config" content="/browserconfig.xml" />
+      <meta name="msapplication-TileColor" content="#ffffff" />
+      <meta name="theme-color" content="#ffffff" />
+      <link rel="stylesheet" href="../shared.css" />
+      <link rel="stylesheet" href="../styles/contact.css" />
+      <link
+         rel="stylesheet"
+         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+      />
+      <link
+         rel="stylesheet"
+         href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+      />
+      <script src="/src/headerFooter.js" type="module" defer></script>
+   </head>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>rhapsody</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png" />
-    <link rel="manifest" href="/assets/icons/site.webmanifest" />
-    <meta name="msapplication-config" content="/browserconfig.xml" />
-    <meta name="msapplication-TileColor" content="#ffffff" />
-    <meta name="theme-color" content="#ffffff" />
-    <link rel="stylesheet" href="../shared.css" />
-    <link rel="stylesheet" href="../styles/contact.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <script src="/src/headerFooter.js" type="module" defer></script>
-</head>
-
-<body>
-    <header class="header">
-        <i class="fas fa-sliders-h fa-lg" id="nav-icon"></i>
-        <a href="#">
+   <body>
+      <header class="header">
+         <i class="fas fa-sliders-h fa-lg" id="nav-icon"></i>
+         <a href="../index.html">
             <p class="logo">rhapsody</p>
-        </a>
-        <div class="header-nav-cart-wrapper">
+         </a>
+         <div class="header-nav-cart-wrapper">
             <nav class="header-nav">
-                <ul class="header-nav-list">
-                    <a href="../index.html">
-                        <li class="header-nav-list-element">
-                            home
-                        </li>
-                    </a>
-                    <div class="header-nav-list-dropdown">
-                        <a href="list.html">
-                            <li class="header-nav-list-element">list</li>
-                        </a>
-                        <div class="dropdown">
-                            <ul class="dropdown-list">
-                                <a href="list.html?category=men's clothing">
-                                    <li class="dropdown-list-element">men's clothing</li>
-                                </a>
-                                <a href="list.html?category=jewelery">
-                                    <li class="dropdown-list-element">jewelery</li>
-                                </a>
-                                <a href="list.html?category=electronics">
-                                    <li class="dropdown-list-element">electronics</li>
-                                </a>
-                                <a href="list.html?category=women's clothing">
-                                    <li class="dropdown-list-element">women's clothing</li>
-                                </a>
-                            </ul>
-                        </div>
-                    </div>
-                    <a href="#">
-                        <li class="header-nav-list-element" id="active-page">contact</li>
-                    </a>
-                    <a href="about.html">
-                        <li class="header-nav-list-element">about us</li>
-                    </a>
-                </ul>
+               <ul class="header-nav-list">
+                  <a href="../index.html">
+                     <li class="header-nav-list-element">home</li>
+                  </a>
+                  <div class="header-nav-list-dropdown">
+                     <a href="list.html">
+                        <li class="header-nav-list-element">list</li>
+                     </a>
+                     <div class="dropdown">
+                        <ul class="dropdown-list">
+                           <a href="list.html?category=men's clothing">
+                              <li class="dropdown-list-element">
+                                 men's clothing
+                              </li>
+                           </a>
+                           <a href="list.html?category=jewelery">
+                              <li class="dropdown-list-element">jewelery</li>
+                           </a>
+                           <a href="list.html?category=electronics">
+                              <li class="dropdown-list-element">electronics</li>
+                           </a>
+                           <a href="list.html?category=women's clothing">
+                              <li class="dropdown-list-element">
+                                 women's clothing
+                              </li>
+                           </a>
+                        </ul>
+                     </div>
+                  </div>
+                  <a href="#">
+                     <li class="header-nav-list-element" id="active-page">
+                        contact
+                     </li>
+                  </a>
+                  <a href="about.html">
+                     <li class="header-nav-list-element">about us</li>
+                  </a>
+               </ul>
             </nav>
             <div class="cart-wrap">
-                <i class="fas fa-shopping-cart fa-lg" id="cart"></i>
-                <div class="cart-items-no hide"></div>
+               <i class="fas fa-shopping-cart fa-lg" id="cart"></i>
+               <div class="cart-items-no hide"></div>
             </div>
             <div class="cart-dropdown hide">
-                <p class="cart-dropdown-title">your cart</p>
-                <div class="cart-dropdown-products"></div>
-                <a href="/pages/cart.html"><button class="btn go-to-cart-btn">
-                        go to your cart
-                    </button></a>
+               <p class="cart-dropdown-title">your cart</p>
+               <div class="cart-dropdown-products"></div>
+               <a href="/pages/cart.html"
+                  ><button class="btn go-to-cart-btn">
+                     go to your cart
+                  </button></a
+               >
             </div>
-        </div>
-    </header>
-    <main class="main">
-        <div class="main-header">
+         </div>
+      </header>
+      <main class="main">
+         <div class="main-header">
             <p class="heading">HOW TO FIND US</p>
-            <p> <i class="fas fa-phone-alt"></i> Phone: +382 67 005 566</p>
-            <p> <i class="fas fa-envelope"></i> Email: test@email.com</p>
-            <p> Address: Radosava Burića, 2/13, zgrada između ambasade Kine i Codre</p>
-        </div>
-        <div class="main-body">
+            <p><i class="fas fa-phone-alt"></i> Phone: +382 67 005 566</p>
+            <p><i class="fas fa-envelope"></i> Email: test@email.com</p>
+            <p>
+               Address: Radosava Burića, 2/13, zgrada između ambasade Kine i
+               Codre
+            </p>
+         </div>
+         <div class="main-body">
             <div class="main-body-container">
+               <p class="heading">CONTACT US</p>
+               <p>
+                  Email us with any question or inquiries or call +382 67 005
+                  566. We would be happy to answer your questions and set up a
+                  meeting with you. How can we help you?
+               </p>
 
-                <p class="heading">CONTACT US</p>
-                <p>Email us with any question or inquiries or call +382 67 005 566. We would be happy to answer your
-                    questions and set up a meeting with you. How can we help you?</p>
+               <h2>GET IN TOUCH</h2>
+               <form action="#" class="contact-form">
+                  <div class="input-container name-div">
+                     <input
+                        class="input-field"
+                        type="text"
+                        placeholder="Name"
+                        name="name"
+                     />
+                     <i class="fas fa-user input-icon"></i>
+                  </div>
 
-                <h2>GET IN TOUCH</h2>
-                <form action="#" class="contact-form">
+                  <div class="input-container email-div">
+                     <input
+                        class="input-field"
+                        type="text"
+                        placeholder="Email"
+                        name="email"
+                     />
+                     <i class="fas fa-at input-icon"></i>
+                  </div>
 
-                    <div class="input-container name-div">
-                        <input class="input-field" type="text" placeholder="Name" name="name">
-                        <i class="fas fa-user input-icon"></i>
-                    </div>
+                  <div class="input-container subject-div">
+                     <input
+                        class="input-field"
+                        type="text"
+                        placeholder="Subject"
+                        name="subject"
+                     />
+                     <i class="fa fa-envelope input-icon"></i>
+                  </div>
 
-                    <div class="input-container email-div">
-                        <input class="input-field" type="text" placeholder="Email" name="email">
-                        <i class="fas fa-at input-icon"></i>
-                    </div>
-
-                    <div class="input-container subject-div">
-                        <input class="input-field" type="text" placeholder="Subject" name="subject">
-                        <i class="fa fa-envelope input-icon"></i>
-                    </div>
-
-                    <div class="input-container message-div">
-                        <textarea name="message" class="input-field" cols="30" rows="10"
-                            placeholder="Message"></textarea>
-                    </div>
-
-                </form>
-                <button type="submit" class="form-btn">SEND MESSAGE</button>
+                  <div class="input-container message-div">
+                     <textarea
+                        name="message"
+                        class="input-field"
+                        cols="30"
+                        rows="10"
+                        placeholder="Message"
+                     ></textarea>
+                  </div>
+               </form>
+               <button type="submit" class="form-btn">SEND MESSAGE</button>
             </div>
-        </div>
-        <div class="main-footer">
+         </div>
+         <div class="main-footer">
             <p class="heading">OUR LOCATION</p>
             <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d850.6161836945316!2d19.25435958058567!3d42.42863727562327!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x134deba72dc0c1fb%3A0x6e1408738e708f34!2sCoinis%20DOO!5e0!3m2!1sen!2s!4v1616415946991!5m2!1sen!2s"
-                class="map">
+               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d850.6161836945316!2d19.25435958058567!3d42.42863727562327!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x134deba72dc0c1fb%3A0x6e1408738e708f34!2sCoinis%20DOO!5e0!3m2!1sen!2s!4v1616415946991!5m2!1sen!2s"
+               class="map"
+            >
             </iframe>
-        </div>
-    </main>
-    <footer class="footer">
-        <div class="footer-about-us-info">
+         </div>
+      </main>
+      <footer class="footer">
+         <div class="footer-about-us-info">
             <h1 class="footer-logo logo">rhapsody</h1>
             <p>Radosava Burića, 2/13, zgrada između ambasade Kine i Codre</p>
             <p class="footer-about-us-info-icon-text-wrap">
-                <i class="fas fa-phone-alt"></i>+382 67 005 566
+               <i class="fas fa-phone-alt"></i>+382 67 005 566
             </p>
             <p class="footer-about-us-info-icon-text-wrap">
-                <a href="mailto:developers.lab.me@gmail.com"><i
-                        class="fas fa-envelope"></i>developers.lab.me@gmail.com</a>
+               <a href="mailto:developers.lab.me@gmail.com"
+                  ><i class="fas fa-envelope"></i>developers.lab.me@gmail.com</a
+               >
             </p>
-        </div>
-        <div class="footer-other-pages">
+         </div>
+         <div class="footer-other-pages">
             <p class="footer-section-title">other pages</p>
             <ul class="footer-other-pages-list">
-                <a href="#">
-                    <li class="footer-other-pages-list-element">home</li>
-                </a>
-                <a href="/pages/list.html" target="_blank">
-                    <li class="footer-other-pages-list-element">list</li>
-                </a>
-                <a href="/pages/contact.html" target="_blank">
-                    <li class="footer-other-pages-list-element">contact</li>
-                </a>
-                <a href="/pages/about.html" target="_blank">
-                    <li class="footer-other-pages-list-element">about us</li>
-                </a>
+               <a href="../index.html" target="_blank">
+                  <li class="footer-other-pages-list-element">home</li>
+               </a>
+               <a href="/pages/list.html" target="_blank">
+                  <li class="footer-other-pages-list-element">list</li>
+               </a>
+               <a href="#">
+                  <li class="footer-other-pages-list-element">contact</li>
+               </a>
+               <a href="/pages/about.html" target="_blank">
+                  <li class="footer-other-pages-list-element">about us</li>
+               </a>
             </ul>
-        </div>
-        <div class="footer-privacy-terms">
+         </div>
+         <div class="footer-privacy-terms">
             <p class="footer-section-title">privacy &#38; terms</p>
             <a href="#">terms of use</a>
             <a href="#">privacy policy</a>
             <a href="#">cookies</a>
-        </div>
-        <div class="footer-follow-us">
+         </div>
+         <div class="footer-follow-us">
             <p class="footer-follow-us-title footer-section-title">follow us</p>
             <div class="footer-follow-us-social-media">
-                <a href="https://www.facebook.com/DevelopersLabMe" target="_blank"><i
-                        class="fab fa-facebook fa-2x"></i></a>
-                <a href="https://www.instagram.com/developers.lab.me/" target="_blank"><i
-                        class="fab fa-instagram fa-2x"></i></a>
-                <a href="#"><i class="fab fa-linkedin fa-2x"></i></a>
-                <a href="#"><i class="fab fa-youtube fa-2x"></i></a>
+               <a
+                  href="https://www.facebook.com/DevelopersLabMe"
+                  target="_blank"
+                  ><i class="fab fa-facebook fa-2x"></i
+               ></a>
+               <a
+                  href="https://www.instagram.com/developers.lab.me/"
+                  target="_blank"
+                  ><i class="fab fa-instagram fa-2x"></i
+               ></a>
+               <a href="#"><i class="fab fa-linkedin fa-2x"></i></a>
+               <a href="#"><i class="fab fa-youtube fa-2x"></i></a>
             </div>
-        </div>
-    </footer>
-</body>
-
+         </div>
+      </footer>
+   </body>
 </html>

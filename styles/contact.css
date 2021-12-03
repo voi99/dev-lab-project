@@ -1,176 +1,179 @@
 .main {
-    margin: 0.85rem;
-    background: var(--space-blue);
-    border-radius: 0.5rem;
-    transition: all 0.3s ease;
-    display: grid;
-    grid-template-rows: 1fr 2fr 1fr;
-    gap: 5rem;
-    overflow: hidden;
+   margin: 0.85rem;
+   background: var(--space-blue);
+   border-radius: 0.5rem;
+   transition: all 0.3s ease;
+   display: grid;
+   grid-template-rows: 1fr 2fr 1fr;
+   gap: 1rem;
+   overflow: hidden;
 }
 
 .heading {
-    font-size: 2rem;
-    margin: 0;
-    font-weight: 900;
-    letter-spacing: 0.2em;
+   font-size: 2rem;
+   margin: 0;
+   font-weight: 900;
+   letter-spacing: 0.2em;
 }
 
 .main-header {
-    background: url('../assets/images/contact-us-sm.jpg');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+   background: url('../assets/images/contact-us-sm.jpg');
+   background-position: center;
+   background-size: cover;
+   background-repeat: no-repeat;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   padding: 1rem;
 }
 
 .main-body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
 }
 
 .main-body-container {
-    margin-top: 4rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    width: 80%;
-    gap: 1rem;
+   margin-top: 4rem;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   text-align: center;
+   width: 80%;
+   gap: 1rem;
+}
+
+.main-body-container > * {
+   margin: 0;
 }
 
 .contact-form {
-    width: 100%;
-    display: grid;
-    grid-template-areas: 'name''email''subject''message';
-    gap: 2rem;
+   width: 100%;
+   display: grid;
+   grid-template-areas: 'name' 'email' 'subject' 'message';
+   gap: 1.5rem;
 }
 
 .name-div {
-    grid-area: name;
+   grid-area: name;
 }
 
 .email-div {
-    grid-area: email;
+   grid-area: email;
 }
 
 .subject-div {
-    grid-area: subject;
+   grid-area: subject;
 }
 
 .message-div {
-    grid-area: message;
+   grid-area: message;
 }
 
 .input-container {
-    display: flex;
-    align-items: center;
-    width: 100%;
+   display: flex;
+   align-items: center;
+   width: 100%;
 }
 
 .input-icon {
-    flex: 20%;
-    padding: 1rem;
-    background: var(--l-gradient);
-    animation: bg-animation 2.5s infinite alternate;
-    background-size: 200%;
-    color: white;
-    text-align: center;
-    z-index: 1;
+   flex: 20%;
+   padding: 1rem;
+   background: var(--l-gradient);
+   animation: bg-animation 2.5s infinite alternate;
+   background-size: 200%;
+   color: white;
+   text-align: center;
+   z-index: 1;
 }
 
 .input-field {
-    width: 100%;
-    height: 100%;
-    padding: 1rem;
-    outline: none;
-    font-family: 'Questrial', sans-serif;
-    font-weight: 900;
-    color: var(--space-blue);
+   width: 100%;
+   height: 100%;
+   padding: 1rem;
+   outline: none;
+   font-family: 'Questrial', sans-serif;
+   font-weight: 900;
+   color: var(--space-blue);
 }
 
 .input-field:focus {
-    border: 2px solid dodgerblue;
+   border: 2px solid dodgerblue;
 }
 
 .form-btn {
-    background: var(--l-gradient);
-    animation: bg-animation 2.5s infinite alternate;
-    background-size: 200%;
-    color: white;
-    padding: 15px 20px;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    opacity: 0.9;
-    margin-bottom: 3rem;
+   background: var(--l-gradient);
+   animation: bg-animation 2.5s infinite alternate;
+   background-size: 200%;
+   color: white;
+   padding: 15px 20px;
+   border: none;
+   cursor: pointer;
+   width: 100%;
+   opacity: 0.9;
+   margin-bottom: 3rem;
 }
 
 .form-btn:hover {
-    background-color: var(--dark-blue);
-    color: var(--white);
+   background-color: var(--dark-blue);
+   color: var(--white);
 }
 
 .form-btn:hover {
-    color: var(--space-blue);
-    transition: all 0.25s ease-in-out;
+   color: var(--space-blue);
+   transition: all 0.25s ease-in-out;
 }
 
 .main-footer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 4rem;
-    padding-bottom: 1rem;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   gap: 2rem;
+   padding-bottom: 3rem;
 }
 
 .map {
-    width: 80%;
-    height: 80%;
+   width: 80%;
+   height: 80%;
 }
 
 @media only screen and (min-width: 768px) {
-    .heading {
-        font-size: 3rem;
-    }
+   .heading {
+      font-size: 3rem;
+   }
 
-    .main-body-container {
-        gap: 2rem;
-    }
+   .main-body-container {
+      gap: 2rem;
+   }
 
-    .input-icon {
-        padding: 2rem;
-    }
+   .input-icon {
+      padding: 2rem;
+   }
 
-    .input-field {
-        padding: 2rem;
-
-    }
+   .input-field {
+      padding: 2rem;
+   }
 }
 
 @media only screen and (min-width: 1024px) {
-    .contact-form {
-        grid-template-areas: 'name message message''email message message''subject message message';
-    }
+   .contact-form {
+      grid-template-areas: 'name message message' 'email message message' 'subject message message';
+   }
 
-    .main-header {
-        background: url('../assets/images/contact-us-lg.jpg');
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-    }
+   .main-header {
+      background: url('../assets/images/contact-us-lg.jpg');
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+   }
 
-    .main-body-container {
-        width: 70%;
-        gap: 3rem;
-    }
-
+   .main-body-container {
+      width: 70%;
+      gap: 3rem;
+   }
 }
