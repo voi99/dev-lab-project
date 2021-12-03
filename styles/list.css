@@ -120,6 +120,10 @@
     transform: scale(0);
 }
 
+.card:hover {
+   background: var(--light-space-blue);
+}
+
 .animate {
     transform: scale(1);
     transition: all 200ms;
