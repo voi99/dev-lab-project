@@ -95,7 +95,7 @@
    flex-direction: row;
    align-items: center;
    justify-content: space-between;
-   height: 20rem;
+   height: 21rem;
    padding: 1rem 0.3rem;
 }
 
@@ -272,40 +272,41 @@
 .best {
    grid-area: best;
    display: grid;
-   grid-template-rows: 1fr 1fr;
-   gap: 1.2rem;
+   grid-template-rows: repeat(2, 10rem);
+   gap: 0.5rem;
 }
 
 .best-section {
    display: flex;
    flex-direction: column;
-   gap: 0.25rem;
+   height: 10.5rem;
 }
 
 .best-section > h4 {
    margin: 0;
+   padding-bottom: 0.2rem;
 }
 
 .best-div {
-   height: 100%;
-   width: 100%;
    display: grid;
    grid-template-columns: 1.2fr 1fr;
    gap: 1rem;
 }
 
 .best-img-div {
-   background: white;
+   background: var(--white);
    display: flex;
    align-items: center;
    justify-content: center;
    border-radius: 0.85rem;
+   padding: 1rem;
+   height: 9rem;
 }
 
 .best-img {
    object-fit: contain;
-   max-width: 70%;
-   max-height: 70%;
+   width: 95%;
+   height: 95%;
    transition: all 0.3s ease;
    cursor: pointer;
 }
@@ -315,8 +316,9 @@
 }
 
 .best-details {
-   display: grid;
-   grid-template-rows: 1fr 1fr 1fr 0.7fr;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
    font-weight: bold;
 }
 
@@ -333,7 +335,6 @@
    display: flex;
    justify-content: center;
    align-items: center;
-
    overflow: hidden;
 }
 
@@ -535,6 +536,9 @@
 
    .best {
       gap: 0.8rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
    }
 }
 
@@ -544,7 +548,6 @@
       grid-template-columns: repeat(4, 1fr) 1.3fr;
       grid-template-areas:
          'slider slider slider slider best'
-         'top-rated top-rated top-rated top-rated best'
          'top-rated top-rated top-rated top-rated fb-feed'
          'top-rated top-rated top-rated top-rated .';
    }
@@ -559,6 +562,11 @@
 
    .slider {
       height: 23rem;
+   }
+
+   .best {
+      gap: 0.8rem;
+      display: grid;
    }
 }
 
