@@ -1,123 +1,135 @@
+#active-page {
+   border: none;
+   position: relative;
+}
+
+#active-page::after {
+   position: absolute;
+   bottom: 20%;
+   left: 0;
+   content: '';
+   border-bottom: 3px solid var(--space-blue);
+   width: 100%;
+}
 
 .filter {
-    background-color: var(--space-blue);
-    border-radius: 0.5rem;
-    margin: 0.85rem;
-    display: flex;
-    flex-direction: column;
+   background-color: var(--space-blue);
+   border-radius: 0.5rem;
+   margin: 0.85rem;
+   display: flex;
+   flex-direction: column;
 }
 
 .filter-search {
-    margin: 0.85rem;
-    display: grid;
-    grid-template-columns: 8fr 2fr;
-    grid-gap: 0.85rem;
+   margin: 0.85rem;
+   display: grid;
+   grid-template-columns: 8fr 2fr;
+   grid-gap: 0.85rem;
 }
 
 .filter-search-input {
-    font-family: 'Questrial', sans-serif;
-    font-weight: 900;
-    color: var(--space-blue);
-    border-radius: 0.5rem;
-    padding: 1rem;
-    text-align: center;
+   font-family: 'Questrial', sans-serif;
+   font-weight: 900;
+   color: var(--space-blue);
+   border-radius: 0.5rem;
+   padding: 1rem;
+   text-align: center;
 }
 
 .filter-search-btn {
-    color: white;
-    font-family: 'Questrial', sans-serif;
-    font-weight: 900;
-    border-radius: 0.5rem;
-    padding: 1rem;
-    cursor: pointer;
+   color: white;
+   font-family: 'Questrial', sans-serif;
+   font-weight: 900;
+   border-radius: 0.5rem;
+   padding: 1rem;
+   cursor: pointer;
 }
 
-.filter-search-btn, .radio-filter:checked+label {
-    background: var(--l-gradient);
-    animation: bg-animation 2.5s infinite alternate;
-    background-size: 200%;
+.filter-search-btn,
+.radio-filter:checked + label {
+   background: var(--l-gradient);
+   animation: bg-animation 2.5s infinite alternate;
+   background-size: 200%;
 }
 
 .filter-search-btn:hover {
-    color: var(--space-blue);
-    transition: all 0.25s ease-in-out;
+   color: var(--space-blue);
+   transition: all 0.25s ease-in-out;
 }
 
 .filter-specs {
-    margin: 0.85rem;
-    margin-top: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.85rem;
+   margin: 0.85rem;
+   margin-top: 0;
+   display: flex;
+   flex-direction: column;
+   gap: 0.85rem;
 }
 
 .slider-filter-div {
-    height: 4rem;
-    display: grid;
-    grid-template-rows: 1fr 3fr;
+   height: 4rem;
+   display: grid;
+   grid-template-rows: 1fr 3fr;
 }
 
 .radio-filter-div {
-    display: flex;
-    gap: 0.85rem;
-    flex-wrap: wrap;
+   display: flex;
+   gap: 0.85rem;
+   flex-wrap: wrap;
 }
 
-.radio-filter-div>label {
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 0.5rem;
-    background-color: rgba(0, 0, 0, 0.5);
-    text-transform: capitalize;
-    flex: 40vw;
-    height: 3rem;
+.radio-filter-div > label {
+   text-align: center;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border-radius: 0.5rem;
+   background-color: rgba(0, 0, 0, 0.5);
+   text-transform: capitalize;
+   flex: 40vw;
+   height: 3rem;
 }
 
-.radio-filter-div>input {
-    display: none;
+.radio-filter-div > input {
+   display: none;
 }
 
 .slide-filter {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
+   display: flex;
+   align-items: center;
+   justify-content: space-evenly;
 }
 
 .slide {
-    width: 50%;
+   width: 50%;
 }
 
 .filter-specs-text {
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
+   display: flex;
+   text-align: center;
+   justify-content: center;
+   align-items: center;
 }
-
 
 /* ---------------------------------------------------------------------------------------------------------------------- */
 
-
 .main {
-    margin: 0.85rem;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+   margin: 0.85rem;
+   display: flex;
+   flex-wrap: wrap;
+   gap: 10px;
 }
 
 .card {
-    flex: auto;
-    background-color: var(--space-blue);
-    border-radius: 0.5rem;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 0.85rem;
-    transform: scale(0);
+   flex: auto;
+   background-color: var(--space-blue);
+   border-radius: 0.5rem;
+   padding: 1rem;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 0.85rem;
+   transform: scale(0);
 }
 
 .card:hover {
@@ -125,110 +137,111 @@
 }
 
 .animate {
-    transform: scale(1);
-    transition: all 200ms;
+   transform: scale(1);
+   transition: all 200ms;
 }
 
 .card-title {
-    text-align: center;
+   text-align: center;
 }
 
 .card-img {
-    height: 100%;
-    background-color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.85rem;
-    border-radius: 0.5rem;
+   height: 100%;
+   background-color: white;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 0.85rem;
+   border-radius: 0.5rem;
 }
 
 .card-footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
+   width: 100%;
 }
 
 .add-to-cart-btn {
-    color: black;
-    font-weight: bold;
-    padding: 0.5rem;
+   color: black;
+   font-weight: bold;
+   padding: 0.5rem;
 }
 
 .add-to-cart-btn:hover {
-    background-color: var(--dark-blue);
-    color: var(--white);
-    transition: all 300ms;
+   background-color: var(--dark-blue);
+   color: var(--white);
+   transition: all 300ms;
 }
 
 .card-img {
-    width: 60%;
-    object-fit: contain;
-    border-radius: 0.5rem;
+   width: 60%;
+   object-fit: contain;
+   border-radius: 0.5rem;
 }
 
 /* ---------------------------------------------------------------------------------------------------------------------- */
 
 @keyframes bg-animation {
-    0% {
-        background-position: left;
-    }
+   0% {
+      background-position: left;
+   }
 
-    100% {
-        background-position: right;
-    }
+   100% {
+      background-position: right;
+   }
 }
 
 @media only screen and (min-width: 550px) and (max-width: 768px) {
-    .card {
-        flex: 40%;
-    }
+   .card {
+      flex: 40%;
+   }
 }
 
 @media only screen and (min-width: 768px) {
-    body {
-        font-size: 18px;
-    }
+   body {
+      font-size: 18px;
+   }
 
-    .card {
-        flex: 30%;
-    }
+   .card {
+      flex: 30%;
+   }
 
-    .slider-filter-div {
-        grid-template-rows: none;
-        grid-template-columns: 1fr 3fr;
-    }
+   .slider-filter-div {
+      grid-template-rows: none;
+      grid-template-columns: 1fr 3fr;
+   }
 
-    .radio-filter-div>label {
-        flex: 20%;
-    }
+   .radio-filter-div > label {
+      flex: 20%;
+   }
 }
 
 /* Laptop Design */
 
 @media only screen and (min-width: 1024px) {
-    body {
-        font-size: 20px;
-    }
+   body {
+      font-size: 20px;
+   }
 
-    .dropdown {
-        top: 3.85rem;
-    }
+   .dropdown {
+      top: 3.85rem;
+   }
 
-    .card {
-        flex: 20%;
-    }
+   .card {
+      flex: 20%;
+   }
 
-    #cart:hover, .footer a:hover {
-        color: var(--space-blue);
-        transition: all 0.25s ease-in-out;
-    }
+   #cart:hover,
+   .footer a:hover {
+      color: var(--space-blue);
+      transition: all 0.25s ease-in-out;
+   }
 
-    .footer {
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-areas: 'info pages privacy follow';
-        gap: 0rem;
-        padding: 3.2rem 4rem;
-    }
+   .footer {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-areas: 'info pages privacy follow';
+      gap: 0rem;
+      padding: 3.2rem 4rem;
+   }
 }

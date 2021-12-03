@@ -48,9 +48,6 @@ function checkKey(e) {
         if(animationIsRunning)
         return;
         animationIsRunning = true;
-        void images[0].offsetWidth;
-        void images[1].offsetWidth;
-        void images[2].offsetWidth;
         images[0].classList.add('hide-left');
         images[1].classList.add('hide-left');
         images[2].classList.add('hide-left');
@@ -78,7 +75,7 @@ function checkKey(e) {
         if (third < 0) {
             third = pictures.length - 1
         }
-        setTimeout(changeImages, 150)
+        setTimeout(changeImages, 70)
         setTimeout(() => {
             images[0].classList.remove('hide-left');
             images[1].classList.remove('hide-left');
@@ -95,9 +92,6 @@ function checkKey(e) {
         if(animationIsRunning)
         return;
         animationIsRunning = true;
-        void images[0].offsetWidth;
-        void images[1].offsetWidth;
-        void images[2].offsetWidth;
         images[0].classList.add('hide-right');
         images[1].classList.add('hide-right');
         images[2].classList.add('hide-right');
@@ -126,7 +120,7 @@ function checkKey(e) {
         if (third == pictures.length) {
             third = 0;
         }
-        setTimeout(changeImages, 150);
+        setTimeout(changeImages, 70);
         setTimeout(() => {
             images[0].classList.remove('hide-right');
             images[1].classList.remove('hide-right');

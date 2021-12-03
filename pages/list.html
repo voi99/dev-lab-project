@@ -1,192 +1,226 @@
 <html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Rhapsody</title>
+      <link rel="stylesheet" href="../shared.css" />
+      <link rel="stylesheet" href="../styles/list.css" />
+      <script src="../src/list.js" type="module" defer></script>
+      <script src="../src/headerFooter.js" type="module" defer></script>
+      <link
+         rel="stylesheet"
+         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+      />
+      <link
+         rel="stylesheet"
+         href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+      />
+   </head>
 
-<head>
-   <meta charset="UTF-8" />
-   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   <title>Rhapsody</title>
-   <link rel="stylesheet" href="../shared.css" />
-   <link rel="stylesheet" href="../styles/list.css" />
-   <script src="../src/list.js" type="module" defer></script>
-   <script src="../src/headerFooter.js" type="module" defer></script>
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" />
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-</head>
-
-<body>
-   <header class="header">
-      <i class="fas fa-sliders-h fa-lg" id="nav-icon"></i>
-      <a href="#">
-         <p class="logo">rhapsody</p>
-      </a>
-      <div class="header-nav-cart-wrapper">
-         <nav class="header-nav">
-            <ul class="header-nav-list">
-               <a href="../index.html">
-                  <li class="header-nav-list-element">
-                     home
-                  </li>
-               </a>
-               <div class="header-nav-list-dropdown">
-                  <a href="list.html" id="active-page">
-                     <li class="header-nav-list-element">list</li>
+   <body>
+      <header class="header">
+         <i class="fas fa-sliders-h fa-lg" id="nav-icon"></i>
+         <a href="#">
+            <p class="logo">rhapsody</p>
+         </a>
+         <div class="header-nav-cart-wrapper">
+            <nav class="header-nav">
+               <ul class="header-nav-list">
+                  <a href="../index.html">
+                     <li class="header-nav-list-element">home</li>
                   </a>
-                  <div class="dropdown">
-                     <ul class="dropdown-list">
-                        <a href="/pages/list.html?category=men's clothing"><li class="dropdown-list-element">men's clothing</li></a>
-                        <a href="/pages/list.html?category=jewelery"><li class="dropdown-list-element">jewelery</li></a>
-                        <a href="/pages/list.html?category=electronics"><li class="dropdown-list-element">electronics</li></a>
-                        <a href="/pages/list.html?category=women's clothing"><li class="dropdown-list-element">women's clothing</li></a>
-                     </ul>
+                  <div class="header-nav-list-dropdown">
+                     <a href="list.html">
+                        <li class="header-nav-list-element" id="active-page">
+                           list
+                        </li>
+                     </a>
+                     <div class="dropdown">
+                        <ul class="dropdown-list">
+                           <a href="/pages/list.html?category=men's clothing"
+                              ><li class="dropdown-list-element">
+                                 men's clothing
+                              </li></a
+                           >
+                           <a href="/pages/list.html?category=jewelery"
+                              ><li class="dropdown-list-element">
+                                 jewelery
+                              </li></a
+                           >
+                           <a href="/pages/list.html?category=electronics"
+                              ><li class="dropdown-list-element">
+                                 electronics
+                              </li></a
+                           >
+                           <a href="/pages/list.html?category=women's clothing"
+                              ><li class="dropdown-list-element">
+                                 women's clothing
+                              </li></a
+                           >
+                        </ul>
+                     </div>
+                  </div>
+                  <a href="contact.html">
+                     <li class="header-nav-list-element">contact</li>
+                  </a>
+                  <a href="about.html">
+                     <li class="header-nav-list-element">about us</li>
+                  </a>
+               </ul>
+            </nav>
+            <div class="cart-wrap">
+               <i class="fas fa-shopping-cart fa-lg" id="cart"></i>
+               <div class="cart-items-no hide"></div>
+            </div>
+            <div class="cart-dropdown hide">
+               <strong>your cart</strong>
+               <div class="cart-dropdown-products"></div>
+               <a href="/pages/cart.html"
+                  ><button class="btn go-to-cart-btn">
+                     go to your cart
+                  </button></a
+               >
+            </div>
+         </div>
+      </header>
+      <div class="content">
+         <div class="filter">
+            <div class="filter-search">
+               <input
+                  type="text"
+                  name=""
+                  id=""
+                  placeholder="Type Here"
+                  class="filter-search-input"
+               />
+               <button class="filter-search-btn">Search</button>
+            </div>
+            <div class="filter-specs">
+               <div class="slider-filter-div">
+                  <span class="filter-specs-text">Filters</span>
+                  <div class="slide-filter">
+                     <span
+                        >Minimum rating:
+                        <span class="slide-value">0.1</span></span
+                     >
+                     <input
+                        type="range"
+                        min="1"
+                        max="100"
+                        value="1"
+                        class="slide"
+                        id="myRange"
+                     />
                   </div>
                </div>
-               <a href="contact.html">
-                  <li class="header-nav-list-element">contact</li>
+               <div class="radio-filter-div"></div>
+            </div>
+         </div>
+
+         <main class="main"></main>
+      </div>
+      <footer class="footer">
+         <div class="footer-about-us-info">
+            <h1 class="footer-logo logo">rhapsody</h1>
+            <p>Radosava Burića, 2/13, zgrada između ambasade Kine i Codre</p>
+            <p class="footer-about-us-info-icon-text-wrap">
+               <i class="fas fa-phone-alt"></i>+382 67 005 566
+            </p>
+            <p class="footer-about-us-info-icon-text-wrap">
+               <a href="mailto:developers.lab.me@gmail.com"
+                  ><i class="fas fa-envelope"></i>developers.lab.me@gmail.com</a
+               >
+            </p>
+         </div>
+         <div class="footer-other-pages">
+            <p class="footer-section-title">other pages</p>
+            <ul class="footer-other-pages-list">
+               <a href="#">
+                  <li class="footer-other-pages-list-element">home</li>
                </a>
-               <a href="about.html">
-                  <li class="header-nav-list-element">about us</li>
+               <a href="list.html" target="_blank">
+                  <li class="footer-other-pages-list-element">list</li>
+               </a>
+               <a href="contact.html" target="_blank">
+                  <li class="footer-other-pages-list-element">contact</li>
+               </a>
+               <a href="about.html" target="_blank">
+                  <li class="footer-other-pages-list-element">about us</li>
                </a>
             </ul>
-         </nav>
-         <div class="cart-wrap">
-            <i class="fas fa-shopping-cart fa-lg" id="cart"></i>
-            <div class="cart-items-no hide"></div>
          </div>
-         <div class="cart-dropdown hide">
-            <strong>your cart</strong>
-            <div class="cart-dropdown-products"></div>
-            <a href="/pages/cart.html"
-               ><button class="btn go-to-cart-btn">
-                  go to your cart
-               </button></a
-            >
+         <div class="footer-privacy-terms">
+            <p class="footer-section-title">privacy &#38; terms</p>
+            <a href="#">terms of use</a>
+            <a href="#">privacy policy</a>
+            <a href="#">cookies</a>
          </div>
-      </div>
-   </header>
-   <div class="content">
-      <div class="filter">
-         <div class="filter-search">
-            <input type="text" name="" id="" placeholder="Type Here" class="filter-search-input">
-            <button class="filter-search-btn">Search</button>
-         </div>
-         <div class="filter-specs">
-            <div class="slider-filter-div">
-               <span class="filter-specs-text">Filters</span>
-               <div class="slide-filter">
-                  <span>Minimum rating: <span class="slide-value">0.1</span></span>
-                  <input type="range" min="1" max="100" value="1" class="slide" id="myRange">
-               </div>
-            </div>
-            <div class="radio-filter-div">
+         <div class="footer-follow-us">
+            <p class="footer-follow-us-title footer-section-title">follow us</p>
+            <div class="footer-follow-us-social-media">
+               <a
+                  href="https://www.facebook.com/DevelopersLabMe"
+                  target="_blank"
+                  ><i class="fab fa-facebook fa-2x"></i
+               ></a>
+               <a
+                  href="https://www.instagram.com/developers.lab.me/"
+                  target="_blank"
+                  ><i class="fab fa-instagram fa-2x"></i
+               ></a>
+               <a href="#"><i class="fab fa-linkedin fa-2x"></i></a>
+               <a href="#"><i class="fab fa-youtube fa-2x"></i></a>
             </div>
          </div>
+      </footer>
+
+      <div class="added-to-cart-wrap hide">
+         <div class="added-to-cart">product added to cart</div>
       </div>
 
+      <div class="modal-window-wrap hide">
+         <div class="modal-window">
+            <i class="fas fa-times-circle close-modal-btn fa-lg"></i>
 
-
-
-      <main class="main">
-
-      </main>
-
-
-
-
-
-   </div>
-   <footer class="footer">
-      <div class="footer-about-us-info">
-         <h1 class="footer-logo logo">rhapsody</h1>
-         <p>Radosava Burića, 2/13, zgrada između ambasade Kine i Codre</p>
-         <p class="footer-about-us-info-icon-text-wrap">
-            <i class="fas fa-phone-alt"></i>+382 67 005 566
-         </p>
-         <p class="footer-about-us-info-icon-text-wrap">
-            <a href="mailto:developers.lab.me@gmail.com"><i class="fas fa-envelope"></i>developers.lab.me@gmail.com</a>
-         </p>
-      </div>
-      <div class="footer-other-pages">
-         <p class="footer-section-title">other pages</p>
-         <ul class="footer-other-pages-list">
-            <a href="#">
-               <li class="footer-other-pages-list-element">home</li>
-            </a>
-            <a href="list.html" target="_blank">
-               <li class="footer-other-pages-list-element">list</li>
-            </a>
-            <a href="contact.html" target="_blank">
-               <li class="footer-other-pages-list-element">contact</li>
-            </a>
-            <a href="about.html" target="_blank">
-               <li class="footer-other-pages-list-element">about us</li>
-            </a>
-         </ul>
-      </div>
-      <div class="footer-privacy-terms">
-         <p class="footer-section-title">privacy &#38; terms</p>
-         <a href="#">terms of use</a>
-         <a href="#">privacy policy</a>
-         <a href="#">cookies</a>
-      </div>
-      <div class="footer-follow-us">
-         <p class="footer-follow-us-title footer-section-title">follow us</p>
-         <div class="footer-follow-us-social-media">
-            <a href="https://www.facebook.com/DevelopersLabMe" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
-            <a href="https://www.instagram.com/developers.lab.me/" target="_blank"><i
-                  class="fab fa-instagram fa-2x"></i></a>
-            <a href="#"><i class="fab fa-linkedin fa-2x"></i></a>
-            <a href="#"><i class="fab fa-youtube fa-2x"></i></a>
-         </div>
-      </div>
-   </footer>
-
-   <div class="added-to-cart-wrap hide">
-      <div class="added-to-cart">product added to cart</div>
-   </div>
-
-   <div class="modal-window-wrap hide">
-      <div class="modal-window">
-         <i class="fas fa-times-circle close-modal-btn fa-lg"></i>
-
-         <div class="modal-window-background">
-            <div class="modal-window-product">
-               <div class="loading-circle loading-circle-desktop">
-                  <div class="circle">
-                     <div class="circle-inside"></div>
+            <div class="modal-window-background">
+               <div class="modal-window-product">
+                  <div class="loading-circle loading-circle-desktop">
+                     <div class="circle">
+                        <div class="circle-inside"></div>
+                     </div>
                   </div>
-               </div>
-               <div class="loaded hide">
-                  <div class="modal-window-product-img card-img">
-                     <img src="" alt="" />
-                  </div>
-                  <div class="modal-window-product-title">
-                     <strong></strong>
-                     <p></p>
-                  </div>
+                  <div class="loaded hide">
+                     <div class="modal-window-product-img card-img">
+                        <img src="" alt="" />
+                     </div>
+                     <div class="modal-window-product-title">
+                        <strong></strong>
+                        <p></p>
+                     </div>
 
-                  <div class="modal-window-product-desc">
-                     <p></p>
-                  </div>
-                  <div class="modal-window-product-rating">
-                     <span class="fa fa-star"></span>
-                     <span class="fa fa-star"></span>
-                     <span class="fa fa-star"></span>
-                     <span class="fa fa-star"></span>
-                     <span class="fa fa-star"></span>
-                  </div>
+                     <div class="modal-window-product-desc">
+                        <p></p>
+                     </div>
+                     <div class="modal-window-product-rating">
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                     </div>
 
-                  <div class="modal-window-product-price">
-                     <strong></strong>
-                  </div>
+                     <div class="modal-window-product-price">
+                        <strong></strong>
+                     </div>
 
-                  <div class="modal-window-product-add-to-cart">
-                     <button class="btn add-to-cart-btn">add to cart</button>
+                     <div class="modal-window-product-add-to-cart">
+                        <button class="btn add-to-cart-btn">add to cart</button>
+                     </div>
                   </div>
                </div>
             </div>
          </div>
       </div>
-   </div>
-</body>
-
+   </body>
 </html>
