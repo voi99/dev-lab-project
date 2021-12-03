@@ -140,4 +140,5 @@ function checkKey(e) {
         document.onkeydown = null;
     })
 
+    setInterval(()=>{document.querySelectorAll('.arrow')[1].click()}, 3000)
 })();
