@@ -64,7 +64,9 @@ function removeProduct(e) {
       const productId = e.currentTarget.dataset['id']
 
       const cart = JSON.parse(localStorage.getItem('cart'))
-      const filterCart = cart.filter((product) => product.id != productId)
+      const filterCart = cart.filter(
+         (product) => parseInt(product.id) !== parseInt(productId)
+      )
 
       if (filterCart.length <= 0) {
          localStorage.removeItem('cart')
@@ -92,7 +94,7 @@ function updateUI(productId, cart, cb) {
       const totalPrice = total.innerHTML.substring(1)
 
       for (let i = 0; i < cart.length; i++) {
-         if (parseFloat(cart[i].id) === parseFloat(productId)) {
+         if (parseInt(cart[i].id) === parseInt(productId)) {
             if (cb) {
                total.innerHTML = `$${cb(
                   parseFloat(totalPrice),
@@ -101,7 +103,8 @@ function updateUI(productId, cart, cb) {
                break
             } else {
                total.innerHTML = `$${(
-                  parseFloat(totalPrice) - parseFloat(cart[i].price)
+                  parseFloat(totalPrice) -
+                  parseFloat(cart[i].price * cart[i].quantity)
                ).toFixed(2)}`
                break
             }
