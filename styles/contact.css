@@ -100,7 +100,7 @@
     border: 2px solid dodgerblue;
 }
 
-.btn {
+.form-btn {
     background: var(--l-gradient);
     animation: bg-animation 2.5s infinite alternate;
     background-size: 200%;
@@ -113,12 +113,12 @@
     margin-bottom: 3rem;
 }
 
-.btn:hover {
+.form-btn:hover {
     background-color: var(--dark-blue);
     color: var(--white);
 }
 
-.btn:hover {
+.form-btn:hover {
     color: var(--space-blue);
     transition: all 0.25s ease-in-out;
 }
